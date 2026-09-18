@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+@import "tailwindcss";
+
+/* ==========================================================================
+   NÍTIDO — Design Tokens
+   Source of truth: brandboard_nitido_pdf.pdf
+   Do not introduce new brand colors without an updated Brand Board.
+   ========================================================================== */
+@theme {
+  /* Brand colors — verbatim from Brand Board */
+  --color-nitido-red: #ff2055;
+  --color-nitido-purple: #7d1fff;
+  --color-nitido-purple-deep: #5504eb;
+  --color-nitido-white: #ffffff;
+  --color-nitido-black: #000000;
+
+  /* Derived UI tones (not brand colors — implementation necessities) */
+  --color-surface: #0a0a0d;
+  --color-surface-raised: #121216;
+  --color-border-subtle: rgba(255, 255, 255, 0.1);
+  --color-text-muted: rgba(255, 255, 255, 0.68);
+
+  --font-display: "Anton", "Ultra System", sans-serif;
+  --font-body: "Poppins", "Ultra System", sans-serif;
+
+  --animate-fade-up: fade-up 0.7s ease-out both;
+  --animate-glow-pulse: glow-pulse 3s ease-in-out infinite;
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes glow-pulse {
+  0%, 100% { opacity: 0.55; }
+  50% { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-nitido-black);
+  color: var(--color-nitido-white);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background-color: var(--color-nitido-purple);
+  color: var(--color-nitido-white);
+}
+
+.font-display {
+  font-family: var(--font-display);
+  letter-spacing: 0.01em;
+}
+
+/* Split-letter heading treatment — matches the brand's own IG headline pattern
+   (see: "SERVICIOS CREATIVOS", "SERVICIOS DIGITALES") */
+.split-letters span:nth-child(4n+1) { color: var(--color-nitido-white); }
+.split-letters span:nth-child(4n+2) { color: var(--color-nitido-purple); }
+.split-letters span:nth-child(4n+3) { color: var(--color-nitido-red); }
+.split-letters span:nth-child(4n+4) { color: var(--color-nitido-purple); }
+
+.text-balance {
+  text-wrap: balance;
+}
+
+/* Focus visibility — accessibility floor */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--color-nitido-purple);
+  outline-offset: 3px;
+  border-radius: 2px;
+}

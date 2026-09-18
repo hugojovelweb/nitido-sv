@@ -38,7 +38,7 @@ export default function Footer() {
       </div>
 
       <p className="mt-8 text-center text-xs text-white/40">
-        © {year} {brand.name}. Todos los derechos reservados.
+        © {year} {brand.name}. Todos los derechos reservados. By Hugo Jovel Web.
       </p>
     </footer>
   );

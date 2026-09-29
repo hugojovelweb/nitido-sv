@@ -1,5 +1,5 @@
 # Nítido — Landing Page (Fase 1)
-# By Hugo Jovel Web
+# By Hugo Jovel Web 2026
 
 Landing corporativa de **Nítido**, agencia creativa y de marketing digital en El Salvador.
 

@@ -8,6 +8,7 @@ Registro resumido. El detalle completo de cada decisión (contexto, opciones con
 | [ADR-002](/docs/adr/ADR-002-deployment.md) | Deploy: Netlify ahora → Hostinger después | Cliente quiere iterar rápido en Netlify (portfolio propio) y ya tiene cuenta activa en Hostinger para el destino final |
 | [ADR-003](/docs/adr/ADR-003-design-system.md) | Diseño 100% basado en la identidad ya validada del cliente, sin stock | No hay fotografía real de portfolio; se reutilizan los patrones visuales reales de las piezas de Instagram del cliente (headings multicolor, proceso numerado, cajas con borde rojo, formas diagonales) |
 | [ADR-004](/docs/adr/ADR-004-contact-form.md) | Formulario con proveedor externo opcional (`VITE_FORM_ENDPOINT`), con fallback simulado mientras no se defina proveedor | No hay backend propio en Fase 1; no se implementa hasta conocer el proveedor de correo elegido |
+| [ADR-005](/docs/adr/ADR-005-multi-page-routing.md) | Sitio multi-página con react-router-dom (sin cambiar el stack de ADR-001) | Cliente pidió URLs separadas (inicio/nosotros/servicios×2/portfolio/contacto) tras enviar maqueta de referencia; requirió agregar `.htaccess` (Hostinger) y confirmar `netlify.toml` para que las rutas no den 404 |
 
 ## Reglas derivadas que no deben romperse
 - No cambiar el stack sin nuevo ADR + autorización del cliente.

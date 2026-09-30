@@ -1,4 +1,5 @@
-import { brand } from "../../data/content";
+import { Link } from "react-router-dom";
+import { brand, routes } from "../../data/content";
 import Button from "../ui/Button";
 import CornerShards from "../ui/CornerShards";
 
@@ -43,7 +44,7 @@ export default function Hero() {
           <Button as="a" href={brand.whatsappLink} target="_blank" rel="noreferrer">
             Escribinos por WhatsApp
           </Button>
-          <Button as="a" href="#servicios" variant="outline">
+          <Button as={Link} to={routes.serviciosCreativos} variant="outline">
             Ver servicios
           </Button>
         </div>

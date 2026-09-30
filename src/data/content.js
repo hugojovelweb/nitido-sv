@@ -1,5 +1,6 @@
 // Contenido oficial extraído de las piezas de marca proporcionadas por el cliente
-// (Servicios_Creativos.jpeg, Servicios_Digitales.jpeg, Proceso.jpeg, Preguntas.jpeg, Contacto.jpeg)
+// (Servicios_Creativos.jpeg, Servicios_Digitales.jpeg, Proceso.jpeg, Preguntas.jpeg,
+// Contacto.jpeg) + Nitido_com.docx (pedido de sitio multi-página, sept 2026).
 // NO se ha inventado texto de negocio. Ver /docs/assets.md para trazabilidad de fuentes.
 
 export const brand = {
@@ -26,11 +27,70 @@ export const socials = [
   { name: "X", href: "#", confirmed: false },
 ];
 
+// Mapa del sitio multi-página (routing con react-router-dom).
+// Pedido explícito del cliente (Nitido_com.docx): inicio, nosotros, servicios
+// (dividido en dos páginas), portfolio, contacto.
+export const routes = {
+  home: "/",
+  nosotros: "/nosotros",
+  serviciosCreativos: "/servicios/creativos",
+  serviciosDigitales: "/servicios/digitales",
+  portfolio: "/portfolio",
+  contacto: "/contacto",
+};
+
 export const nav = [
-  { label: "Servicios", href: "#servicios" },
-  { label: "Proceso", href: "#proceso" },
-  { label: "Preguntas", href: "#preguntas" },
-  { label: "Contacto", href: "#contacto" },
+  { label: "Inicio", href: routes.home },
+  { label: "Nosotros", href: routes.nosotros },
+  {
+    label: "Servicios",
+    children: [
+      { label: "Servicios Creativos", href: routes.serviciosCreativos },
+      { label: "Servicios Digitales", href: routes.serviciosDigitales },
+    ],
+  },
+  { label: "Portfolio", href: routes.portfolio },
+  { label: "Contacto", href: routes.contacto },
+];
+
+// "Pilares" — resumen en 3 tarjetas que abre cada página de Servicios,
+// según el patrón visual pedido en Nitido_com.docx (imagen 4: "Pilares
+// para tu crecimiento digital"). Íconos referencian SocialIcon-style keys
+// propias (ver PillarIcon.jsx).
+export const creativePillars = [
+  {
+    icon: "camera",
+    title: "Producción Visual",
+    description: "Fotografía y video con dirección de arte que capturan la esencia de tu marca.",
+  },
+  {
+    icon: "target",
+    title: "Dirección Creativa",
+    description: "Concepto, estilo y enfoque para que cada pieza comunique mejor.",
+  },
+  {
+    icon: "film",
+    title: "Edición y Postproducción",
+    description: "Piezas limpias, dinámicas y bien pensadas, listas para publicar.",
+  },
+];
+
+export const digitalPillars = [
+  {
+    icon: "camera",
+    title: "Identidad de Marca",
+    description: "Branding y rebranding con identidades claras, coherentes y memorables.",
+  },
+  {
+    icon: "target",
+    title: "Estrategia Directa",
+    description: "Campañas y gestión de comunidad enfocadas en alcance y conversión medibles.",
+  },
+  {
+    icon: "film",
+    title: "Presencia Digital",
+    description: "Sitios web y CRM que organizan tus procesos y oportunidades de venta.",
+  },
 ];
 
 export const creativeServices = [
@@ -41,6 +101,10 @@ export const creativeServices = [
   {
     title: "Fotografía",
     description: "Imágenes que elevan la presencia de tu marca.",
+  },
+  {
+    title: "Tomas de Dron",
+    description: "Perspectiva aérea para producciones con más impacto visual.",
   },
   {
     title: "Edición",
@@ -106,3 +170,29 @@ export const faqs = [
       "También foto, edición, manejo de redes, campañas de Google, desarrollo de páginas web e implementación de CRM y contenido digital.",
   },
 ];
+
+// NOT_DEFINED — el cliente pidió agregar una sección de Reviews
+// (Nitido_com.docx, punto 11) pero no ha entregado reseñas reales todavía.
+// No se inventan testimonios. El componente Reviews.jsx muestra un estado
+// vacío profesional mientras este arreglo esté vacío. Formato esperado por
+// entrada: { name, role, quote, rating (1-5) }.
+export const reviews = [];
+
+// NOT_DEFINED — el cliente no ha entregado copy de misión/visión/valores/
+// diferenciadores para "Nosotros". Solo se usan aquí los hechos ya
+// confirmados por el cliente en otras piezas de marca (no se inventa nada
+// nuevo). Actualizar cuando el cliente entregue brand-guidelines.txt /
+// product-context.txt con esta información.
+export const nosotros = {
+  intro:
+    "Somos una agencia creativa y de marketing digital en El Salvador. Combinamos producción audiovisual, contenido y estrategia digital para que tu marca se vea, literalmente, nítida.",
+  missionDefined: false,
+  visionDefined: false,
+  valuesDefined: false,
+};
+
+// NOT_DEFINED — sin fotografía real de portfolio todavía. El cliente creará
+// un Google Drive para ir agregando contenido (Nitido_com.docx, punto 7).
+// Portfolio.jsx muestra un estado "próximamente" mientras este arreglo esté
+// vacío. Formato esperado por entrada: { title, category, mediaUrl, mediaType }.
+export const portfolioItems = [];

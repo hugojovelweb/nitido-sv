@@ -18,10 +18,12 @@
 
 | Asset | Propósito | Dimensiones recomendadas | Formato | Notas |
 |---|---|---|---|---|
-| Foto/video hero | Reemplazar tratamiento tipográfico del Hero por imagen real de trabajo, si se desea en Fase 2 | 1600×1000px mín. | JPG/WEBP o MP4 | Opcional — el Hero actual funciona sin ella |
-| Fotos de portfolio (3-6) | Sección de casos/trabajos (Fase 2) | 1200×800px | JPG/WEBP, <300KB c/u | No inventar clientes ni proyectos |
+| Foto de fondo — Hero de Portfolio | La maqueta de referencia (`Nitido_com.docx`, imagen 12) usa una foto real de fondo en `/portfolio`. No se agregó ninguna: el entorno de desarrollo no tiene acceso a bancos de imágenes externos, y no se debía usar una foto de stock sin licencia verificable en un sitio real de cliente. Mientras tanto, `/portfolio` usa un fondo de degradado + shards (sistema visual de marca) | 1920×1080px mín. | JPG/WEBP | Puede ser genérica (foto de cámara/producción), pero con licencia comercial clara (Unsplash/Pexels con atribución, o banco propio) |
+| Contenido de portfolio (fotos/video de trabajos reales) | Grid de `/portfolio`, alimentado desde `src/data/content.js` → `portfolioItems` (vacío = estado "Próximamente") | 1200×800px | JPG/WEBP/MP4, <300KB c/u imagen | El cliente creará un Drive para esto (Nitido_com.docx, punto 7). No inventar clientes ni proyectos |
 | Logo SVG vectorial | Reemplazar PNG rasterizado por SVG nativo (mejor escalado, menor peso) | — | SVG | El cliente puede exportarlo de su herramienta de diseño original |
 | Archivos de fuente "Ultra System" | Reemplazar el sustituto Anton | — | WOFF2 | Ver ADR-003 |
+| Contenido de "Nosotros" | Misión, visión, valores, diferenciadores — `src/data/content.js` → `nosotros` | — | Texto | Ver `nosotros.missionDefined` etc. en el código — hoy en `false` |
+| Reseñas reales | Sección Reviews — `src/data/content.js` → `reviews` (vacío = estado "Próximamente") | — | Texto + nombre/rol | No se inventaron testimonios. Formato: `{ name, role, quote, rating }` |
 
 ## Redes sociales — pendiente de confirmación
 

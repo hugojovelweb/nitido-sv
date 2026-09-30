@@ -1,0 +1,17 @@
+# Necesario para Hostinger (Apache) porque el sitio ahora usa rutas del lado
+# del cliente (react-router). Sin esto, refrescar /nosotros, /portfolio, etc.
+# da 404. Sube este archivo junto al contenido de dist/ a public_html/.
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # Si el archivo o carpeta solicitado existe de verdad, sirve tal cual
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+
+  # Cualquier otra ruta (ej. /nosotros, /servicios/creativos) sirve index.html
+  # y react-router se encarga de renderizar la página correcta
+  RewriteRule ^ index.html [L]
+</IfModule>

@@ -1,36 +1,69 @@
 # Arquitectura
 
 ## Visión general
-Landing page estática (SPA de una sola ruta) construida en React, compilada por Vite a HTML/CSS/JS estático. No hay backend, base de datos ni CMS en esta fase.
+Sitio multi-página construido en React + react-router-dom, compilado por Vite
+a HTML/CSS/JS estático (SPA con routing del lado del cliente — ver ADR-005).
+No hay backend, base de datos ni CMS en esta fase.
 
 ```
 Usuario → Netlify/Hostinger (CDN estático) → index.html + JS/CSS bundle
+                                            → react-router resuelve la página según la URL
                                             → formulario → [pendiente: proveedor de email]
                                             → botones → WhatsApp / Instagram (enlaces directos)
 ```
+
+Todas las rutas internas requieren que el servidor sirva siempre
+`index.html` (ver `netlify.toml` y `public/.htaccess`) — react-router decide
+qué página mostrar en el navegador.
+
+## Mapa del sitio
+
+| Ruta | Página | Componente |
+|---|---|---|
+| `/` | Inicio | `pages/Home.jsx` |
+| `/nosotros` | Nosotros | `pages/Nosotros.jsx` |
+| `/servicios` | Redirect → `/servicios/creativos` | — |
+| `/servicios/creativos` | Servicios Creativos | `pages/ServiciosCreativos.jsx` |
+| `/servicios/digitales` | Servicios Digitales | `pages/ServiciosDigitales.jsx` |
+| `/portfolio` | Portfolio | `pages/Portfolio.jsx` |
+| `/contacto` | Contacto | `pages/Contacto.jsx` |
+| `*` | Redirect → `/` | — |
 
 ## Component Architecture
 
 ```
 src/
 ├── components/
-│   ├── layout/       Footer (elementos de layout global)
-│   ├── navigation/    Navbar
-│   ├── hero/          Hero
-│   ├── sections/      Services, ServiceList, Process, FAQ, Contact
-│   └── ui/            Button, FramedTag, SplitHeading, SocialIcon, CornerShards
-│                       (primitivas reutilizables, sin lógica de negocio)
+│   ├── layout/        Layout (Navbar + Outlet + Footer), Footer
+│   ├── navigation/     Navbar (con dropdown "Servicios")
+│   ├── hero/           Hero
+│   ├── sections/       PillarsGrid, ServiciosTeaser, ServiceList, GradientHero,
+│   │                    CTABand, Process, FAQ, Reviews, Contact
+│   └── ui/              Button, FramedTag, SplitHeading, SocialIcon, PillarIcon,
+│                         CornerShards (primitivas reutilizables, sin lógica de negocio)
 ├── data/
-│   └── content.js      Única fuente de verdad para copy y datos de contacto
-└── App.jsx             Composición de secciones (sin lógica propia)
+│   └── content.js       Única fuente de verdad para copy, rutas (`routes`) y nav
+├── hooks/
+│   └── usePageTitle.js   <title> por página sin dependencias extra
+├── pages/                Una página = una ruta. Composición de secciones.
+└── App.jsx               Definición de rutas (react-router)
 ```
 
-**Principio:** los componentes en `ui/` no conocen el contenido del negocio (reciben props). Los componentes en `sections/` conocen el contenido (importan de `data/content.js`) y componen las piezas de `ui/`. Esto permite:
+**Principio:** los componentes en `ui/` no conocen el contenido del negocio
+(reciben props). Los componentes en `sections/` conocen el contenido
+(importan de `data/content.js`) y componen las piezas de `ui/`. Las páginas en
+`pages/` solo componen secciones — no tienen lógica ni copy propio. Esto
+permite:
 - Cambiar copy sin tocar componentes.
-- Reutilizar `ui/` en futuras páginas (Fase 2+) sin arrastrar contenido de la Landing.
+- Reordenar o reutilizar secciones entre páginas sin duplicar código.
+- Agregar una página nueva (Fase 2+) sin tocar el resto del sitio: crear el
+  archivo en `pages/`, agregar la ruta en `App.jsx` y el link en `nav` de
+  `content.js`.
 
 ## Por qué no hay backend todavía
-Ver ADR-004. El formulario de contacto está listo a nivel de UI pero el envío real depende de un proveedor de correo aún no elegido.
+Ver ADR-004. El formulario de contacto está listo a nivel de UI pero el envío
+real depende de un proveedor de correo aún no elegido.
 
-## Rutas futuras (Fase 2+)
-Cuando se agregue routing (ej. página de portfolio, blog, dashboard), se recomienda introducir React Router o migrar a un meta-framework (Next.js/Astro) — decisión que requerirá su propio ADR y no debe tomarse unilateralmente en una sesión futura sin revisar este documento primero.
+## Decisiones relevantes
+Ver `docs/adr/` — especialmente ADR-005 (routing multi-página) antes de
+agregar más páginas o considerar un meta-framework (Next.js/Astro).

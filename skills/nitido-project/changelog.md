@@ -16,3 +16,22 @@ Formato: `AAAA-MM-DD — Descripción`. Agregar una entrada por cada cambio que 
 
 ## Pendiente para la próxima sesión
 - Recibir del cliente: enlaces reales de Facebook/TikTok/otras redes, fotografía/video de portfolio real, archivos de fuente "Ultra System", decisión de proveedor de formulario (Formspree/Resend/otro), dominio final.
+
+## 2026-09-29 — Migración a sitio multi-página
+- Cliente envió `Nitido_com.docx` (capturas de maqueta de referencia de otro negocio construida en un builder externo, más notas de cambios) pidiendo fusionar esa estructura/estilo con el proyecto Nítido existente, sin romper la marca.
+- Convertido de landing single-page a sitio multi-página con react-router-dom (ADR-005): `/`, `/nosotros`, `/servicios/creativos`, `/servicios/digitales`, `/portfolio`, `/contacto`. Redirect `/servicios` → `/servicios/creativos`.
+- Navbar reconstruido con dropdown "Servicios" (desktop) y acordeón (mobile).
+- Nuevo servicio agregado a Servicios Creativos: "Tomas de Dron".
+- Nuevos componentes: `PillarsGrid` (grid de 3 tarjetas "Pilares..."), `GradientHero` (banda de degradado rojo→morado para abrir páginas de Servicios, con corrección del cliente: texto blanco + palabra de énfasis en negro), `CTABand` (banda final de página), `Reviews` (sección con estado vacío profesional — sin testimonios inventados), `ServiciosTeaser` (tarjetas de enlace en Inicio).
+- Página `/portfolio`: decisión consciente de NO usar la foto de stock de la maqueta de referencia (sin acceso a bancos de imágenes con licencia verificable desde este entorno) — usa el sistema visual de marca (degradado + shards) en su lugar. Documentado como IMAGE_REQUIRED en `docs/assets.md`.
+- Página `/nosotros`: solo contiene hechos ya confirmados de la marca — misión/visión/valores marcados explícitamente como pendientes (`nosotros.missionDefined` etc. en `false`), con nota visible en la página mientras tanto.
+- Agregado `public/.htaccess` (routing SPA para Hostinger/Apache) — `netlify.toml` y `sitemap.xml` ya estaban listos desde la sesión anterior.
+- Build, lint y QA visual (6 páginas, desktop + mobile + menú dropdown) verificados sin errores.
+
+## Pendiente para la próxima sesión
+- Contenido real de "Nosotros" (misión, visión, valores, diferenciadores)
+- Reseñas reales para Reviews
+- Contenido de portfolio (fotos/video) — cliente creará un Google Drive
+- Foto de fondo con licencia clara para el Hero de Portfolio (o confirmar que se mantiene el estilo gráfico actual)
+- Enlaces reales de Facebook/TikTok/YouTube/LinkedIn/X
+- Decisión de proveedor de formulario (Formspree/Resend/otro)

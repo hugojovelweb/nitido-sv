@@ -1,4 +1,4 @@
-# Nítido — Sitio Web (Fase 1)
+# Nítido — Sitio Web (Fase 1 Landing MULTIPAGINA)
 ###	By Hugo Jovel Web 2026
 
 Sitio corporativo multi-página de **Nítido**, agencia creativa y de marketing digital en El Salvador.

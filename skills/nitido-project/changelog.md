@@ -35,3 +35,10 @@ Formato: `AAAA-MM-DD — Descripción`. Agregar una entrada por cada cambio que 
 - Foto de fondo con licencia clara para el Hero de Portfolio (o confirmar que se mantiene el estilo gráfico actual)
 - Enlaces reales de Facebook/TikTok/YouTube/LinkedIn/X
 - Decisión de proveedor de formulario (Formspree/Resend/otro)
+
+## 2026-09-29 (2) — Ajuste visual: degradado en vez de letras multicolor
+- Cliente envió el wordmark oficial "NÍTIDO" con degradado morado→rojo y pidió reemplazar el efecto de letras multicolor ("se ve mezclado") en varios encabezados.
+- Nuevo componente `GradientHeading` (mismo degradado que ya se usaba en el Hero para la palabra "nítido").
+- Reemplazado `SplitHeading` → `GradientHeading` en: "Servicios" (teaser de Inicio), "Reviews", "Servicios Creativos", "Servicios Digitales" (vía `PillarsGrid`), y "El detalle" (ambas páginas de Servicios).
+- Sin cambios en "Nosotros" (sigue con `SplitHeading`) ni en Contacto — el cliente dijo que evaluará con su cliente final si extender el degradado ahí también. Pendiente de confirmación antes de tocarlos.
+- Build y lint verificados sin errores; QA visual de Inicio, Servicios Creativos y Servicios Digitales.

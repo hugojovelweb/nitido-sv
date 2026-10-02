@@ -1,11 +1,11 @@
-import SplitHeading from "../ui/SplitHeading";
+import GradientHeading from "../ui/GradientHeading";
 import PillarIcon from "../ui/PillarIcon";
 
 export default function PillarsGrid({ title, subtitle, items }) {
   return (
     <section className="bg-surface py-16 sm:py-20">
       <div className="mx-auto max-w-5xl px-5 sm:px-8">
-        <SplitHeading text={title} className="text-4xl sm:text-5xl" />
+        <GradientHeading text={title} className="text-4xl sm:text-5xl" />
         {subtitle && (
           <p className="mt-3 max-w-xl text-white/70">{subtitle}</p>
         )}

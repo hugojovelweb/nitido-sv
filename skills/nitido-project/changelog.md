@@ -42,3 +42,17 @@ Formato: `AAAA-MM-DD — Descripción`. Agregar una entrada por cada cambio que 
 - Reemplazado `SplitHeading` → `GradientHeading` en: "Servicios" (teaser de Inicio), "Reviews", "Servicios Creativos", "Servicios Digitales" (vía `PillarsGrid`), y "El detalle" (ambas páginas de Servicios).
 - Sin cambios en "Nosotros" (sigue con `SplitHeading`) ni en Contacto — el cliente dijo que evaluará con su cliente final si extender el degradado ahí también. Pendiente de confirmación antes de tocarlos.
 - Build y lint verificados sin errores; QA visual de Inicio, Servicios Creativos y Servicios Digitales.
+
+## 2026-10-01 — Degradado en "Nosotros" + cumplimiento con skill nitido-web-platform
+- Cliente confirmó extender el degradado morado→rojo (`GradientHeading`) al título "Nosotros", pidiendo respetar explícitamente la skill compartida `nitido-web-platform`.
+- Se corrió por primera vez `scripts/verificar_marca.py` de esa skill contra el proyecto completo (ver ADR-006): reveló superficies con grises inventados (`#0a0a0d`, `#121216`) y assets muertos sin relación con la marca.
+- `--color-surface` ahora se deriva por transparencia (`rgb(255 255 255 / 0.06)`), igual que `--nt-superficie` en la skill; `--color-surface-raised` eliminado (sin uso).
+- Eliminados `src/assets/react.svg`, `vite.svg`, `hero.png` (plantilla por defecto de Vite, sin relación con Nítido, sin referencias en el código).
+- El color `#5504eb` del degradado (muestreado por píxel del isotipo real) se mantuvo — es más preciso que el "ESTIMADO" de la skill — y se usó para **corregir la skill compartida** (`tokens.css`, `tokens.json`, `marca-nitido.md`), resolviendo su pendiente #2 para todo proyecto futuro de Nítido.
+- `SplitHeading` queda sin uso activo en ninguna página (se conserva el componente, no se borra, por si se necesita más adelante).
+- Verificador de marca: 0 bloqueantes, 0 avisos. Build y lint limpios.
+- **Bug encontrado y corregido en `GradientHeading`**: el degradado se veía casi todo morado, sin llegar al rojo, en los 6 títulos ya migrados (no solo "Nosotros"). Causa: el componente renderiza un `<h2>` por defecto, que es `display: block` y ocupa el ancho completo del contenedor — el degradado se repartía sobre ese ancho completo, pero el texto (más angosto) solo alcanzaba a mostrar la porción morada inicial. Corregido agregando `inline-block` (y `text-balance`) en `GradientHeading.jsx`, igual que ya funcionaba en el `<span>` de "nítido" del Hero. Verificado visualmente en los 6 títulos (desktop + mobile, incluyendo wrap de dos líneas en "Servicios Digitales").
+
+## Pendiente para la próxima sesión
+- Confirmar si el degradado también debe aplicarse al título de "Contacto"
+- (se mantienen los pendientes de sesiones anteriores: misión/visión/valores de Nosotros, reseñas reales, portfolio real, redes sociales sin confirmar, proveedor de formulario)

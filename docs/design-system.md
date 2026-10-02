@@ -29,12 +29,13 @@ Fuente oficial: `brandboard_nitido_pdf.pdf` (proporcionado por el cliente). Cual
 
 ## Patrones visuales reutilizados del cliente (no inventados)
 
-1. **Encabezados con letras multicolor** (`SplitHeading`): replica el efecto visto en "SERVICIOS CREATIVOS" / "SERVICIOS DIGITALES" donde cada letra alterna blanco/morado/rojo.
-2. **Proceso numerado con línea conectora**: réplica exacta del layout de la pieza "Proceso" (círculos numerados 1-5 unidos por una línea).
-3. **Caja con borde rojo para subtítulos** (`FramedTag`): réplica del patrón visto en "Preguntas" ("Lo que debes saber.") y "Contacto" ("Hablemos de tu marca.").
-4. **Formas diagonales en esquinas** (`CornerShards`): réplica del motivo gráfico presente en todas las piezas de Instagram del cliente.
+1. **Encabezados con degradado morado→rojo** (`GradientHeading`): replica el degradado del wordmark oficial "NÍTIDO" (imagen de marca compartida por el cliente, sept 2026). Usado en: Servicios (teaser), Reviews, Servicios Creativos, Servicios Digitales, "El detalle".
+2. **Encabezados con letras multicolor** (`SplitHeading`): efecto donde cada letra alterna blanco/morado/rojo — visto originalmente en las piezas de Instagram del cliente. El cliente pidió reemplazarlo por el degradado (punto 1) en la mayoría de los casos por verse "mezclado"; se mantiene únicamente en el título "Nosotros" por ahora.
+3. **Proceso numerado con línea conectora**: réplica exacta del layout de la pieza "Proceso" (círculos numerados 1-5 unidos por una línea).
+4. **Caja con borde rojo para subtítulos** (`FramedTag`): réplica del patrón visto en "Preguntas" ("Lo que debes saber.") y "Contacto" ("Hablemos de tu marca.").
+5. **Formas diagonales en esquinas** (`CornerShards`): réplica del motivo gráfico presente en todas las piezas de Instagram del cliente.
 
-Estos NO son decisiones de diseño genéricas — son extracciones directas del lenguaje visual que el cliente ya usa y aprobó.
+Estos NO son decisiones de diseño genéricas — son extracciones directas del lenguaje visual que el cliente ya usa y aprobó. Si el cliente confirma que el degradado también debe reemplazar "Nosotros" o extenderse a Contacto, actualizar aquí y en `SplitHeading`/`GradientHeading` según corresponda.
 
 ## Radius
 - `rounded-full` — botones, badges circulares

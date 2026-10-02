@@ -2,7 +2,7 @@ import usePageTitle from "../hooks/usePageTitle";
 import { digitalPillars, digitalServices } from "../data/content";
 import GradientHero from "../components/sections/GradientHero";
 import PillarsGrid from "../components/sections/PillarsGrid";
-import SplitHeading from "../components/ui/SplitHeading";
+import GradientHeading from "../components/ui/GradientHeading";
 import ServiceList from "../components/sections/ServiceList";
 import CTABand from "../components/sections/CTABand";
 
@@ -26,7 +26,7 @@ export default function ServiciosDigitales() {
       />
 
       <section className="mx-auto max-w-3xl px-5 py-20 sm:px-8 sm:py-24">
-        <SplitHeading text="El detalle" className="text-3xl sm:text-4xl" />
+        <GradientHeading text="El detalle" className="text-3xl sm:text-4xl" />
         <div className="mt-8">
           <ServiceList items={digitalServices} />
         </div>

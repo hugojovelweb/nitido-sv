@@ -15,8 +15,9 @@
   --color-nitido-black: #000000;
 
   /* Derived UI tones (not brand colors — implementation necessities) */
-  --color-surface: #0a0a0d;
-  --color-surface-raised: #121216;
+  /* Derivado de transparencias de blanco sobre negro — no un gris nuevo,
+     conforme a la skill nitido-web-platform (assets/tokens.css: --nt-superficie) */
+  --color-surface: rgb(255 255 255 / 0.06);
   --color-border-subtle: rgba(255, 255, 255, 0.1);
   --color-text-muted: rgba(255, 255, 255, 0.68);
 

@@ -11,7 +11,7 @@ Ver el documento completo en `/docs/design-system.md`. Este archivo es un resume
 - Body: Poppins
 
 ## Patrones visuales de marca (reutilizar, no reinventar)
-1. Encabezados con letras multicolor (blanco/morado/rojo alternado)
+1. Encabezados con **degradado morado→rojo** (`GradientHeading`, igual al wordmark oficial "NÍTIDO"). Usado en: Servicios (teaser), Reviews, Servicios Creativos, Servicios Digitales, "El detalle". El tratamiento de letras multicolor alternadas (`SplitHeading`) quedó reemplazado por este en esos puntos (feedback del cliente, sept 2026: "mezcla de colores no se ve muy bien"). `SplitHeading` se mantiene únicamente en el título "Nosotros" por ahora — no aplicar el degradado ahí sin pedido explícito.
 2. Proceso numerado con línea conectora vertical
 3. Caja con borde rojo para subtítulos/taglines de sección
 4. Formas diagonales rojas/moradas en las esquinas
@@ -20,5 +20,5 @@ Ver el documento completo en `/docs/design-system.md`. Este archivo es un resume
 7. Banda CTA de cierre de página, antes del footer ("¿Listo para...?")
 
 ## Componentes UI reutilizables
-`Button`, `FramedTag`, `SplitHeading`, `SocialIcon`, `PillarIcon`, `CornerShards` — en `src/components/ui/`
+`Button`, `FramedTag`, `SplitHeading`, `GradientHeading`, `SocialIcon`, `PillarIcon`, `CornerShards` — en `src/components/ui/`
 `PillarsGrid`, `GradientHero`, `CTABand`, `Reviews`, `ServiciosTeaser` — en `src/components/sections/`

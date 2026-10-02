@@ -13,11 +13,7 @@ export default function Hero() {
       <CornerShards position="bottom-right" className="opacity-40" />
 
       <div className="relative mx-auto max-w-4xl px-5 sm:px-8 text-center">
-        <img
-          src="/brand/isotipo-white.png"
-          alt="Nítido"
-          className="mx-auto mb-8 h-14 w-auto animate-fade-up sm:h-16"
-        />
+        <img src="/brand/isotipo-white.png" alt="Nítido" className="mx-auto mb-8 h-14 w-auto animate-fade-up sm:h-16" />
 
         <h1
           className="animate-fade-up font-display uppercase leading-[0.92] text-balance text-5xl sm:text-6xl md:text-7xl"

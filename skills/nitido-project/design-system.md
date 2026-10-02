@@ -11,7 +11,7 @@ Ver el documento completo en `/docs/design-system.md`. Este archivo es un resume
 - Body: Poppins
 
 ## Patrones visuales de marca (reutilizar, no reinventar)
-1. Encabezados con **degradado morado→rojo** (`GradientHeading`, igual al wordmark oficial "NÍTIDO"). Usado en: Servicios (teaser), Reviews, Servicios Creativos, Servicios Digitales, "El detalle". El tratamiento de letras multicolor alternadas (`SplitHeading`) quedó reemplazado por este en esos puntos (feedback del cliente, sept 2026: "mezcla de colores no se ve muy bien"). `SplitHeading` se mantiene únicamente en el título "Nosotros" por ahora — no aplicar el degradado ahí sin pedido explícito.
+1. Encabezados con **degradado morado→rojo** (`GradientHeading`, igual al wordmark oficial "NÍTIDO", valor confirmado por muestreo de píxel `#5504eb`→`#7d1fff`). Usado en TODOS los H2 de sección, incluyendo "Nosotros" (confirmado por el cliente 1 oct 2026). El tratamiento de letras multicolor alternadas (`SplitHeading`) quedó reemplazado por completo (feedback del cliente, sept 2026: "mezcla de colores no se ve muy bien"); el componente se conserva sin uso activo por si se necesita más adelante. Pendiente de confirmar si también se extiende al título "Contacto".
 2. Proceso numerado con línea conectora vertical
 3. Caja con borde rojo para subtítulos/taglines de sección
 4. Formas diagonales rojas/moradas en las esquinas

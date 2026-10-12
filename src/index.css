@@ -93,3 +93,22 @@ textarea:focus-visible {
   outline-offset: 3px;
   border-radius: 2px;
 }
+
+/* ==========================================================================
+   Movimiento (ADR-007) — solo transform/opacity/clip-path
+   ========================================================================== */
+.marquee-track {
+  animation: marquee 28s linear infinite;
+  will-change: transform;
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* Texto solo contorno, para rótulos de fondo */
+.outline-text {
+  color: transparent;
+  -webkit-text-stroke: 1px rgb(255 255 255 / 0.2);
+}

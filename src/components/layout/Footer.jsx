@@ -4,19 +4,34 @@ import SocialIcon from "../ui/SocialIcon";
 
 export default function Footer() {
   const year = new Date().getFullYear();
-  const flatLinks = nav.flatMap((item) => (item.children ? item.children : [item]));
+  const flatLinks = nav.flatMap((item) =>
+    item.children ? item.children : [item],
+  );
 
   return (
     <footer className="border-t border-white/10 px-5 py-10 sm:px-8">
       <div className="mx-auto flex max-w-6xl flex-col items-center gap-6 text-center sm:flex-row sm:justify-between sm:text-left">
         <Link to={routes.home} className="flex items-center gap-2.5">
-          <img src="/brand/isotipo-white.png" alt="Nítido" className="h-7 w-auto" />
-          <span className="font-display text-lg">{brand.name.toUpperCase()}</span>
+          <img
+            src="/brand/isotipo-white.png"
+            alt="Nítido"
+            className="h-7 w-auto"
+          />
+          <span className="font-display text-lg">
+            {brand.name.toUpperCase()}
+          </span>
         </Link>
 
-        <nav className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2" aria-label="Enlaces del pie de página">
+        <nav
+          className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2"
+          aria-label="Enlaces del pie de página"
+        >
           {flatLinks.map((item) => (
-            <Link key={item.href} to={item.href} className="text-sm text-white/60 hover:text-white">
+            <Link
+              key={item.href}
+              to={item.href}
+              className="text-sm text-white/60 hover:text-white"
+            >
               {item.label}
             </Link>
           ))}
@@ -41,6 +56,7 @@ export default function Footer() {
 
       <p className="mt-8 text-center text-xs text-white/40">
         © {year} {brand.name}. Todos los derechos reservados.
+        <strong className="block mt-1">by Hugo Jovel Web</strong>
       </p>
     </footer>
   );

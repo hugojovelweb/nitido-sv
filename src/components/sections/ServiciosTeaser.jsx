@@ -18,12 +18,12 @@ const cards = [
 export default function ServiciosTeaser() {
   return (
     <section id="servicios" className="mx-auto max-w-4xl px-5 py-20 sm:px-8 sm:py-24">
-      <GradientHeading text="Servicios" className="text-4xl sm:text-5xl" />
+      <GradientHeading text="Servicios" className="text-4xl sm:text-5xl" data-reveal="mask" />
       <p className="mt-3 max-w-md text-white/70">
         Soluciones creativas y digitales para marcas que quieren conectar y crecer.
       </p>
 
-      <div className="mt-10 grid gap-5 sm:grid-cols-2">
+      <div data-stagger className="mt-10 grid gap-5 sm:grid-cols-2">
         {cards.map((card) => (
           <Link
             key={card.to}

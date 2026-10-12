@@ -1,8 +1,8 @@
 export default function ServiceList({ items }) {
   return (
-    <ul className="divide-y divide-white/10 border-y border-white/10">
+    <ul data-stagger className="divide-y divide-white/10 border-y border-white/10">
       {items.map((item) => (
-        <li key={item.title} className="group py-7 sm:py-8">
+        <li key={item.title} className="group py-7 transition-[padding] duration-300 hover:pl-3 sm:py-8">
           <h3 className="font-display text-2xl uppercase tracking-wide sm:text-3xl">
             {item.title}
           </h3>

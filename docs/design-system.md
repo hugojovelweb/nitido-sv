@@ -11,7 +11,7 @@ Fuente oficial: `brandboard_nitido_pdf.pdf` (proporcionado por el cliente). Cual
 | `nitido-purple-deep` | `#5504eb` | Extremo oscuro del gradiente (sampleado del logo real) | Extraído del isotipo |
 | `nitido-white` | `#ffffff` | Texto principal, fondos claros | Brand Board oficial |
 | `nitido-black` | `#000000` | Fondo base del sitio | Brand Board oficial |
-| `surface` | `#0a0a0d` | Fondo alterno para separar secciones (necesidad de implementación, no es color de marca) | Derivado |
+| `surface` | `rgb(255 255 255 / 0.06)` | Fondo alterno para separar secciones | Derivado por transparencia de blanco sobre negro — no es un gris nuevo, sigue la regla de la skill `nitido-web-platform` (`--nt-superficie`) |
 
 ## Typography
 
@@ -29,13 +29,16 @@ Fuente oficial: `brandboard_nitido_pdf.pdf` (proporcionado por el cliente). Cual
 
 ## Patrones visuales reutilizados del cliente (no inventados)
 
-1. **Encabezados con degradado morado→rojo** (`GradientHeading`): replica el degradado del wordmark oficial "NÍTIDO" (imagen de marca compartida por el cliente, sept 2026). Usado en: Servicios (teaser), Reviews, Servicios Creativos, Servicios Digitales, "El detalle".
-2. **Encabezados con letras multicolor** (`SplitHeading`): efecto donde cada letra alterna blanco/morado/rojo — visto originalmente en las piezas de Instagram del cliente. El cliente pidió reemplazarlo por el degradado (punto 1) en la mayoría de los casos por verse "mezclado"; se mantiene únicamente en el título "Nosotros" por ahora.
+1. **Encabezados con degradado morado→rojo** (`GradientHeading`): replica el degradado del wordmark oficial "NÍTIDO" (imagen de marca compartida por el cliente, sept 2026). Usado en todos los H2 de sección: Servicios (teaser), Reviews, Servicios Creativos, Servicios Digitales, "El detalle", y Nosotros (confirmado por el cliente, 1 oct 2026).
+2. **Encabezados con letras multicolor** (`SplitHeading`): efecto donde cada letra alterna blanco/morado/rojo — visto originalmente en las piezas de Instagram del cliente. El cliente pidió reemplazarlo por el degradado (punto 1) en todos los encabezados de sección. El componente se conserva en `src/components/ui/SplitHeading.jsx` sin uso activo (no se borra sin pedido explícito — ver `legacy-safe-change`), por si se necesita el efecto original en una pieza puntual más adelante.
 3. **Proceso numerado con línea conectora**: réplica exacta del layout de la pieza "Proceso" (círculos numerados 1-5 unidos por una línea).
 4. **Caja con borde rojo para subtítulos** (`FramedTag`): réplica del patrón visto en "Preguntas" ("Lo que debes saber.") y "Contacto" ("Hablemos de tu marca.").
 5. **Formas diagonales en esquinas** (`CornerShards`): réplica del motivo gráfico presente en todas las piezas de Instagram del cliente.
 
-Estos NO son decisiones de diseño genéricas — son extracciones directas del lenguaje visual que el cliente ya usa y aprobó. Si el cliente confirma que el degradado también debe reemplazar "Nosotros" o extenderse a Contacto, actualizar aquí y en `SplitHeading`/`GradientHeading` según corresponda.
+Estos NO son decisiones de diseño genéricas — son extracciones directas del lenguaje visual que el cliente ya usa y aprobó. Queda pendiente de confirmación si el degradado debe extenderse también al título de "Contacto" (ver `skills/nitido-project/changelog.md`).
+
+### Valor del degradado — confirmado por muestreo de píxel
+`--color-nitido-purple-deep: #5504eb` (inicio) → `--color-nitido-purple: #7d1fff` (fin) no son una estimación: se sampleó directamente el PNG del isotipo extraído del brandboard oficial. Este valor también se usó para corregir el token equivalente (antes `#5000e8`, marcado "ESTIMADO") en la skill compartida `nitido-web-platform` (`assets/tokens.css`, `assets/tokens.json`, `references/marca-nitido.md`), resolviendo el pendiente #2 documentado ahí.
 
 ## Radius
 - `rounded-full` — botones, badges circulares

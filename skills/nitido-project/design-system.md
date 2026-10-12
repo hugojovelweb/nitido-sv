@@ -22,3 +22,6 @@ Ver el documento completo en `/docs/design-system.md`. Este archivo es un resume
 ## Componentes UI reutilizables
 `Button`, `FramedTag`, `SplitHeading`, `GradientHeading`, `SocialIcon`, `PillarIcon`, `CornerShards` — en `src/components/ui/`
 `PillarsGrid`, `GradientHero`, `CTABand`, `Reviews`, `ServiciosTeaser` — en `src/components/sections/`
+
+## Movimiento (ADR-007)
+GSAP + ScrollTrigger, solo transform/opacity/clip-path. Se activa con atributos `data-*` (ver `src/lib/motion.js`); los componentes no importan GSAP. Con `prefers-reduced-motion` no se anima nada. Nuevos: `AnimatedWords`, `Marquee`, `MediaSlot`, `PortfolioReel`, `PageWipe`.

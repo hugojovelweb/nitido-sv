@@ -56,3 +56,11 @@ Formato: `AAAA-MM-DD — Descripción`. Agregar una entrada por cada cambio que 
 ## Pendiente para la próxima sesión
 - Confirmar si el degradado también debe aplicarse al título de "Contacto"
 - (se mantienen los pendientes de sesiones anteriores: misión/visión/valores de Nosotros, reseñas reales, portfolio real, redes sociales sin confirmar, proveedor de formulario)
+
+## 2026-10-12 — Reelfolio con animaciones (ADR-007)
+- Cliente compartió Drive "Fotos Profesionales" (no accesible desde el entorno de desarrollo: pidió subir las fotos al chat) y aprobó GSAP + ScrollTrigger con intensidad "muy potente en todas las secciones".
+- Nuevo sistema de movimiento por atributos `data-*` (`src/lib/motion.js`), carga diferida y respeto a `prefers-reduced-motion`.
+- Portfolio: reel horizontal fijado (escritorio) / tira nativa (móvil) con 6 marcadores hasta tener fotos reales; marquee, parallax interno, contador y barra de progreso.
+- Global: entrada de palabras del hero, isotipo con rebote, reveals, cascadas, línea de Proceso que se dibuja, botones magnéticos y cortina de página con degradado de marca.
+- QA: build y lint limpios, verificador de marca 0/0, sin errores de JS, probado en escritorio, móvil y movimiento reducido.
+- Pendiente: fotos/videos reales para llenar `portfolioItems` y asignar media a Servicios/Nosotros; tipografías Anton/Poppins aún se cargan desde Google Fonts (la skill recomienda alojarlas en el proyecto).

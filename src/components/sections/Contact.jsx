@@ -68,7 +68,7 @@ export default function Contact() {
   return (
     <section id="contacto" className="relative overflow-hidden bg-surface py-20 sm:py-28">
       <div className="mx-auto max-w-4xl px-5 sm:px-8">
-        <h2 className="font-display text-5xl uppercase sm:text-6xl">Contacto</h2>
+        <h2 data-reveal="up" className="font-display text-5xl uppercase sm:text-6xl">Contacto</h2>
         <FramedTag className="mt-4">Hablemos de tu marca.</FramedTag>
 
         <div className="mt-14 grid gap-14 md:grid-cols-2 md:gap-10">

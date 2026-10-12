@@ -5,12 +5,12 @@ export default function PillarsGrid({ title, subtitle, items }) {
   return (
     <section className="bg-surface py-16 sm:py-20">
       <div className="mx-auto max-w-5xl px-5 sm:px-8">
-        <GradientHeading text={title} className="text-4xl sm:text-5xl" />
+        <GradientHeading text={title} className="text-4xl sm:text-5xl" data-reveal="mask" />
         {subtitle && (
           <p className="mt-3 max-w-xl text-white/70">{subtitle}</p>
         )}
 
-        <div className="mt-10 grid gap-5 sm:grid-cols-3">
+        <div data-stagger className="mt-10 grid gap-5 sm:grid-cols-3">
           {items.map((item) => (
             <div
               key={item.title}

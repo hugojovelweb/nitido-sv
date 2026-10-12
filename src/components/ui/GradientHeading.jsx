@@ -4,9 +4,10 @@
  * multicolor (SplitHeading) donde el cliente pidió una mezcla más limpia
  * (Servicios, Reviews, Servicios Creativos/Digitales, "El detalle").
  */
-export default function GradientHeading({ text, as: Component = "h2", className = "" }) {
+export default function GradientHeading({ text, as: Component = "h2", className = "", ...rest }) {
   return (
     <Component
+      {...rest}
       // inline-block es clave: sin esto el degradado se reparte sobre el
       // ancho completo del bloque (contenedor), no sobre el texto, y el
       // resultado se ve casi todo morado sin llegar al rojo. Con

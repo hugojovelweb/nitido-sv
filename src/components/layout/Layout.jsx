@@ -1,10 +1,17 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { Outlet, useLocation } from "react-router-dom";
 import Navbar from "../navigation/Navbar";
 import Footer from "./Footer";
+import PageWipe from "./PageWipe";
+import useGsapScope from "../../hooks/useGsapScope";
+import { initPage } from "../../lib/motion";
 
 export default function Layout() {
   const { pathname, hash } = useLocation();
+  const mainRef = useRef(null);
+
+  // Animaciones de la página actual (se revierten al cambiar de ruta)
+  useGsapScope(initPage, mainRef, [pathname]);
 
   useEffect(() => {
     if (hash) {
@@ -26,7 +33,8 @@ export default function Layout() {
         Saltar al contenido principal
       </a>
       <Navbar />
-      <main id="main-content">
+      <PageWipe />
+      <main id="main-content" ref={mainRef}>
         <Outlet />
       </main>
       <Footer />

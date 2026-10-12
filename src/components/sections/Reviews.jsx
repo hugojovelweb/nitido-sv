@@ -16,7 +16,7 @@ function Stars({ rating }) {
 export default function ReviewsSection() {
   return (
     <section id="reviews" className="mx-auto max-w-4xl px-5 py-20 sm:px-8 sm:py-24">
-      <GradientHeading text="Reviews" className="text-4xl sm:text-5xl" />
+      <GradientHeading text="Reviews" className="text-4xl sm:text-5xl" data-reveal="mask" />
       <p className="mt-3 max-w-md text-white/70">Lo que dicen las marcas que ya trabajaron con nosotros.</p>
 
       {reviews.length === 0 ? (

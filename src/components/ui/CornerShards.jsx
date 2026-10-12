@@ -1,10 +1,11 @@
 // Réplica del motivo gráfico de formas diagonales que aparece en todas las
 // piezas de marca (esquinas superior-izquierda e inferior-derecha).
-export default function CornerShards({ position = "top-left", className = "" }) {
+export default function CornerShards({ position = "top-left", className = "", ...rest }) {
   const isTop = position === "top-left";
   return (
     <svg
       aria-hidden="true"
+      {...rest}
       className={`pointer-events-none absolute ${isTop ? "top-0 left-0" : "bottom-0 right-0"} ${className}`}
       width="280"
       height="280"

@@ -36,3 +36,17 @@ Solo Instagram, WhatsApp y correo están confirmados en el Brand Board. El sitio
 - X (Twitter)
 
 **Acción requerida:** el cliente debe enviar el usuario/URL exacto de cada red que sí tenga activa. Se actualiza en `src/data/content.js` → array `socials`, cambiando `confirmed: false` a `true` y completando `href`.
+
+## Presupuesto de medios para el reel de Portfolio (ADR-007)
+
+Formato de cada proyecto en `src/data/content.js` → `portfolioItems`:
+`{ title, category, mediaUrl, mediaType: "image" | "video", poster }`.
+Los archivos van en `public/portfolio/` (el Drive no puede enlazarse directo).
+
+| Tipo | Formato | Tamaño de imagen | Peso máximo | Notas |
+|---|---|---|---|---|
+| Foto | WebP (o AVIF) | 800×1000 px (4:5) | 250 KB | `alt` descriptivo = `title` |
+| Video | MP4 H.264, sin audio | 720×900 px (4:5) | 4 MB, 6–10 s en bucle | Requiere `poster` (WebP ≤ 120 KB) |
+
+Sin items reales, el reel muestra 6 marcadores "Próximo proyecto" con el
+degradado de marca (no se inventan proyectos ni clientes).

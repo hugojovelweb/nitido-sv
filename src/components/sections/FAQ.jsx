@@ -34,10 +34,10 @@ export default function FAQ() {
 
   return (
     <section id="preguntas" className="mx-auto max-w-2xl px-5 py-20 sm:px-8 sm:py-28">
-      <h2 className="font-display text-5xl uppercase sm:text-6xl">Preguntas</h2>
+      <h2 data-reveal="up" className="font-display text-5xl uppercase sm:text-6xl">Preguntas</h2>
       <FramedTag className="mt-4">Lo que debes saber.</FramedTag>
 
-      <div className="mt-10">
+      <div data-stagger className="mt-10">
         {faqs.map((faq, i) => (
           <FaqItem
             key={faq.question}

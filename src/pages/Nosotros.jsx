@@ -9,10 +9,10 @@ export default function Nosotros() {
   return (
     <>
       <section className="relative overflow-hidden pt-32 pb-20 sm:pt-40 sm:pb-24">
-        <CornerShards position="top-left" className="opacity-60" />
+        <CornerShards position="top-left" className="opacity-60" data-parallax="0.6" />
         <div className="relative mx-auto max-w-3xl px-5 sm:px-8">
-          <GradientHeading text="Nosotros" className="text-5xl sm:text-6xl" />
-          <p className="mt-6 max-w-xl text-lg text-white/75 text-balance">
+          <GradientHeading text="Nosotros" className="text-5xl sm:text-6xl" data-reveal="mask" />
+          <p data-reveal="up" className="mt-6 max-w-xl text-lg text-white/75 text-balance">
             {nosotros.intro}
           </p>
 

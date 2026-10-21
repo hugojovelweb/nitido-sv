@@ -50,3 +50,29 @@ Los archivos van en `public/portfolio/` (el Drive no puede enlazarse directo).
 
 Sin items reales, el reel muestra 6 marcadores "Próximo proyecto" con el
 degradado de marca (no se inventan proyectos ni clientes).
+
+## Fotos entregadas por el cliente (oct 2026) — trazabilidad
+
+Origen: Drive "Fotos Profesionales" (zip de 35 archivos; 2 duplicados exactos). Se
+usaron 11 de 33 fotos únicas, recortadas a 4:5 (800×1000) y convertidas a WebP (≤250 KB).
+Los originales no se suben al repositorio.
+
+| Original | Archivo optimizado | Uso |
+|---|---|---|
+| `024C1DAE-E2D4-4169-8830-0DEA0E925732.png` | `public/portfolio/portfolio-01-gastronomia-bebida.webp` | Portfolio (reel) |
+| `IMG_9109.JPG` | `public/portfolio/portfolio-02-hospitalidad-recepcion.webp` | Portfolio (reel) |
+| `B818941D-9A7B-4725-AC09-C2F545884F1C.png` | `public/portfolio/portfolio-03-gastronomia-carne.webp` | Portfolio (reel) |
+| `9FFF982A-712F-4E94-9CF9-59800E46245E(1).jpg` | `public/portfolio/portfolio-04-hospitalidad-lobby.webp` | Portfolio (reel) |
+| `IMG_8415.HEIC` | `public/portfolio/portfolio-05-gastronomia-pupusas.webp` | Portfolio (reel) |
+| `IMG_9108.JPG` | `public/portfolio/portfolio-06-hospitalidad-habitacion.webp` | Portfolio (reel) |
+| `1994C0B7-D61B-47DB-ABF2-33C55F07F803.png` | `public/portfolio/portfolio-07-gastronomia-mesa.webp` | Portfolio (reel) |
+| `55634CA5-8D6E-4D62-B7F1-1EA672241782.jpg` | `public/portfolio/portfolio-08-hospitalidad-sala.webp` | Portfolio (reel) |
+| `DE22CEBE-4433-4989-810E-27269EDC0360.png` | `public/portfolio/servicios-postre.webp` | Servicios Creativos (mosaico) |
+| `IMG_2584.HEIC` | `public/portfolio/servicios-pupusas.webp` | Servicios Creativos (mosaico) |
+| `IMG_4664.JPG` | `public/portfolio/servicios-sliders.webp` | Servicios Creativos (mosaico) |
+
+**No usadas (pendiente de decisión del cliente):** 3 retratos de una persona en traje
+(`DSC05574/05576/05583`, posible foto para Nosotros o equipo; no se identificó a la persona),
+una imagen con texto diseñado ("Las mejores canoas", es una pieza de redes, no foto),
+una foto de naturaleza (serpiente) y fotos de baños/lavandería/patio/habitaciones de menor
+impacto. Los títulos del reel son categorías genéricas; no se nombraron clientes.

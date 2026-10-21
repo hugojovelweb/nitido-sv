@@ -64,3 +64,11 @@ Formato: `AAAA-MM-DD — Descripción`. Agregar una entrada por cada cambio que 
 - Global: entrada de palabras del hero, isotipo con rebote, reveals, cascadas, línea de Proceso que se dibuja, botones magnéticos y cortina de página con degradado de marca.
 - QA: build y lint limpios, verificador de marca 0/0, sin errores de JS, probado en escritorio, móvil y movimiento reducido.
 - Pendiente: fotos/videos reales para llenar `portfolioItems` y asignar media a Servicios/Nosotros; tipografías Anton/Poppins aún se cargan desde Google Fonts (la skill recomienda alojarlas en el proyecto).
+
+## 2026-10-19 — Fotos reales en Portfolio y Servicios Creativos
+- Cliente entregó el zip "Fotos Profesionales". Se seleccionaron y optimizaron 11 fotos (gastronomía y espacios de hotel) → `public/portfolio/`, trazabilidad en `docs/assets.md`.
+- `portfolioItems` con 8 fotos (alt descriptivo por foto); nuevo mosaico animado `MediaMosaic` en Servicios Creativos (`serviciosCreativosMedia`).
+- Fix: `max-w-none` en `MediaSlot` (el preflight de Tailwind recortaba el 125% de ancho del parallax y dejaba franjas negras).
+- El entorno de desarrollo se reinició: el proyecto se restauró desde el último zip. La corrección del degradado `#5504eb` en la skill compartida `nitido-web-platform` se perdió y se reaplicó en la sandbox; NO persiste fuera de ella (actualizar la skill real, ver ADR-006).
+- Verificador de marca 0/0, build y lint limpios, sin errores de JS (escritorio y móvil).
+- Pendiente: decidir uso de los retratos (Nosotros/equipo), nombres de proyectos/clientes con permiso, Hero con foto, videos.

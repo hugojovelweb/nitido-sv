@@ -4,6 +4,7 @@ import GradientHero from "../components/sections/GradientHero";
 import PillarsGrid from "../components/sections/PillarsGrid";
 import GradientHeading from "../components/ui/GradientHeading";
 import ServiceList from "../components/sections/ServiceList";
+import MediaMosaic from "../components/sections/MediaMosaic";
 import CTABand from "../components/sections/CTABand";
 
 export default function ServiciosCreativos() {
@@ -24,6 +25,8 @@ export default function ServiciosCreativos() {
         subtitle="Soluciones creativas para marcas que quieren conectar y crecer."
         items={creativePillars}
       />
+
+      <MediaMosaic />
 
       <section className="mx-auto max-w-3xl px-5 py-20 sm:px-8 sm:py-24">
         <GradientHeading text="El detalle" className="text-3xl sm:text-4xl" />

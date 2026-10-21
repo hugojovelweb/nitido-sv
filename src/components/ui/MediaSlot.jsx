@@ -45,19 +45,19 @@ export default function MediaSlot({ item, index }) {
     <video
       ref={videoRef}
       data-reel-media
-      className="h-full w-[125%] -ml-[12.5%] object-cover"
+      className="h-full w-[125%] max-w-none -ml-[12.5%] object-cover"
       src={item.mediaUrl}
       poster={item.poster}
       muted
       loop
       playsInline
       preload="none"
-      aria-label={item.title}
+      aria-label={item.alt ?? item.title}
     />
   ) : (
-    <img alt={item.title}
+    <img alt={item.alt ?? item.title}
       data-reel-media
-      className="h-full w-[125%] -ml-[12.5%] object-cover"
+      className="h-full w-[125%] max-w-none -ml-[12.5%] object-cover"
       src={item.mediaUrl}
       width="800"
       height="1000"

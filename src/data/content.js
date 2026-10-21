@@ -191,8 +191,25 @@ export const nosotros = {
   valuesDefined: false,
 };
 
-// NOT_DEFINED — sin fotografía real de portfolio todavía. El cliente creará
-// un Google Drive para ir agregando contenido (Nitido_com.docx, punto 7).
-// Portfolio.jsx muestra un estado "próximamente" mientras este arreglo esté
-// vacío. Formato esperado por entrada: { title, category, mediaUrl, mediaType }.
-export const portfolioItems = [];
+// Portfolio: fotografía real entregada por el cliente (Drive "Fotos Profesionales",
+// oct 2026). Archivos optimizados en /public/portfolio (WebP 800×1000, ≤250 KB).
+// Trazabilidad original → archivo en docs/assets.md. Los títulos son categorías
+// genéricas: NO se inventan nombres de clientes ni proyectos. `alt` describe la foto.
+// Formato: { title, category, mediaUrl, mediaType: "image" | "video", alt, poster? }
+export const portfolioItems = [
+  { title: "Gastronomía", category: "Fotografía de producto", mediaUrl: "/portfolio/portfolio-01-gastronomia-bebida.webp", mediaType: "image", alt: "Bebida de naranja con hojas de menta sobre un posavasos, con tres salsas al fondo" },
+  { title: "Hospitalidad", category: "Fotografía de espacios", mediaUrl: "/portfolio/portfolio-02-hospitalidad-recepcion.webp", mediaType: "image", alt: "Recepción de hotel con letrero dorado, lámpara de brazos y dos sillones negros" },
+  { title: "Gastronomía", category: "Fotografía de producto", mediaUrl: "/portfolio/portfolio-03-gastronomia-carne.webp", mediaType: "image", alt: "Salsa cremosa vertida sobre un corte de carne a la parrilla con verduras asadas" },
+  { title: "Hospitalidad", category: "Fotografía de espacios", mediaUrl: "/portfolio/portfolio-04-hospitalidad-lobby.webp", mediaType: "image", alt: "Mostrador de recepción de mármol en un lobby con paneles de madera y luces cálidas" },
+  { title: "Gastronomía", category: "Fotografía de producto", mediaUrl: "/portfolio/portfolio-05-gastronomia-pupusas.webp", mediaType: "image", alt: "Pupusa con queso derretido levantada sobre un plato de pupusas" },
+  { title: "Hospitalidad", category: "Fotografía de espacios", mediaUrl: "/portfolio/portfolio-06-hospitalidad-habitacion.webp", mediaType: "image", alt: "Habitación de hotel con cama, escritorio y un cuadro de paisaje" },
+  { title: "Gastronomía", category: "Fotografía de producto", mediaUrl: "/portfolio/portfolio-07-gastronomia-mesa.webp", mediaType: "image", alt: "Mesa con platos de carne, camarones y papas fritas acompañados de salsas" },
+  { title: "Hospitalidad", category: "Fotografía de espacios", mediaUrl: "/portfolio/portfolio-08-hospitalidad-sala.webp", mediaType: "image", alt: "Lobby con sofá capitoné gris y piso de mármol" },
+];
+
+// Mosaico de Servicios Creativos (misma fuente: fotos entregadas por el cliente)
+export const serviciosCreativosMedia = [
+  { src: "/portfolio/servicios-postre.webp", alt: "Rebanada de pastel de queso con salsa de fresa y menta" },
+  { src: "/portfolio/servicios-pupusas.webp", alt: "Canasta con pupusas recién hechas" },
+  { src: "/portfolio/servicios-sliders.webp", alt: "Mini hamburguesas con ensalada de repollo sobre una bandeja" },
+];

@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { brand, routes } from "../../data/content";
 import Button from "../ui/Button";
 import CornerShards from "../ui/CornerShards";
-import AnimatedWords from "../ui/AnimatedWords";
+import BrandLogo from "../ui/BrandLogo";
 
 export default function Hero() {
   return (
@@ -13,22 +13,16 @@ export default function Hero() {
       <CornerShards position="top-left" className="opacity-70" data-parallax="0.6" />
       <CornerShards position="bottom-right" className="opacity-40" data-parallax="0.9" />
 
-      <div className="relative mx-auto max-w-4xl px-5 sm:px-8 text-center">
-        <img src="/brand/isotipo-white.png" alt="Nítido" data-iso
-          className="mx-auto mb-8 h-14 w-auto sm:h-16" />
-
-        <h1
-          className="font-display uppercase leading-[0.92] text-balance text-5xl sm:text-6xl md:text-7xl"
-        >
-          <AnimatedWords text="Hagamos que se vea" />
-          <span className="inline-block overflow-hidden py-[0.12em] -my-[0.12em] align-bottom">
-            <span
-              data-word
-              className="inline-block bg-gradient-to-r from-nitido-purple-deep via-nitido-purple to-nitido-red bg-clip-text text-transparent"
-            >
-              nítido
-            </span>
-          </span>
+      <div className="relative mx-auto max-w-5xl px-4 sm:px-8 text-center">
+        {/* El logo (nombre + eslogan) es el título principal: va dentro del h1 para
+            conservar la jerarquía de encabezados sin repetir texto visible. */}
+        <h1 className="mb-10 sm:mb-12">
+          <BrandLogo
+            on="dark"
+            data-logo
+            fetchPriority="high"
+            className="mx-auto w-[min(94vw,960px)]"
+          />
         </h1>
 
         <p

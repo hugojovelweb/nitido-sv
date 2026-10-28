@@ -39,10 +39,8 @@ export default function Footer() {
         </div>
       </div>
 
-     
       <p className="mt-8 text-center text-xs text-white/40">
         © {year} {brand.name}. Todos los derechos reservados.
-        <strong className="block mt-1">by Hugo Jovel Web</strong>
       </p>
     </footer>
   );

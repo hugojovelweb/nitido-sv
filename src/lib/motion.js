@@ -4,6 +4,7 @@
  *   data-word            palabra que sube con máscara (intro, ver AnimatedWords)
  *   data-intro           bloque que entra al cargar la página
  *   data-iso             isotipo: entra con giro y rebote
+ *   data-logo            logo horizontal: se revela de izquierda a derecha
  *   data-reveal="up"     entra con fade + desplazamiento al hacer scroll
  *   data-reveal="mask"   se revela con clip-path (izquierda → derecha)
  *   data-stagger         sus hijos directos entran en cascada
@@ -26,6 +27,13 @@ export function initPage({ gsap, ScrollTrigger, root, conditions }) {
   }
   q("[data-iso]").forEach((el) =>
     gsap.from(el, { scale: 0.3, rotate: -28, opacity: 0, duration: 1.2, ease: "elastic.out(1, 0.6)" })
+  );
+  q("[data-logo]").forEach((el) =>
+    gsap.fromTo(
+      el,
+      { clipPath: "inset(0 100% 0 0)", scale: 0.94, opacity: 0.4 },
+      { clipPath: "inset(0 0% 0 0)", scale: 1, opacity: 1, duration: 1.4, ease: "expo.out" }
+    )
   );
   q("[data-intro]").forEach((el, i) =>
     gsap.from(el, { y: 34, opacity: 0, duration: 0.9, ease: "power3.out", delay: 0.45 + i * 0.12 })

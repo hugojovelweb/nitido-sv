@@ -72,3 +72,16 @@ Formato: `AAAA-MM-DD — Descripción`. Agregar una entrada por cada cambio que 
 - El entorno de desarrollo se reinició: el proyecto se restauró desde el último zip. La corrección del degradado `#5504eb` en la skill compartida `nitido-web-platform` se perdió y se reaplicó en la sandbox; NO persiste fuera de ella (actualizar la skill real, ver ADR-006).
 - Verificador de marca 0/0, build y lint limpios, sin errores de JS (escritorio y móvil).
 - Pendiente: decidir uso de los retratos (Nosotros/equipo), nombres de proyectos/clientes con permiso, Hero con foto, videos.
+
+## 2026-10-27 — Logo con eslogan en el Hero
+- Cliente pidió reemplazar la primera imagen de Inicio (isotipo) por el logo horizontal con eslogan, grande y atractivo, en dos versiones según el fondo.
+- Nuevo `BrandLogo` (`on="dark"|"light"`), archivos transparentes en `public/brand/`; revelado de izquierda a derecha (`data-logo`) en `lib/motion.js`. Sin sombras ni brillos sobre el logo (regla de la skill de marca).
+- Pendiente de confirmar: este logotipo difiere del del brandboard (ver docs/assets.md); pedir SVG/PNG originales.
+- Verificador de marca 0/0, build y lint limpios, sin errores de JS.
+
+## 2026-10-27 (2) — Hero: logo más grande, sin titular
+- Cliente tachó el titular "Hagamos que se vea nítido" del hero y pidió que el logo (nombre + eslogan) se vea más grande. Se eliminó el titular visible.
+- El logo ahora va dentro del `<h1>` (nombre accesible: "Nítido, agencia creativa audiovisual") para conservar la jerarquía de encabezados.
+- Ancho del logo: hasta 960 px en escritorio y 94 % de la pantalla en móvil. Logos re-exportados a resolución nativa (≈1290 px de ancho, ≈30 KB).
+- "Hagamos que se vea Nítido." sigue definido en `content.js` (`brand.tagline`) pero hoy NO se muestra en ninguna pantalla. Pendiente: decidir con el cliente si va en el pie de página u otra sección.
+- Verificador de marca 0/0, build y lint limpios, sin errores de JS.

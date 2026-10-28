@@ -76,3 +76,19 @@ Los originales no se suben al repositorio.
 una imagen con texto diseñado ("Las mejores canoas", es una pieza de redes, no foto),
 una foto de naturaleza (serpiente) y fotos de baños/lavandería/patio/habitaciones de menor
 impacto. Los títulos del reel son categorías genéricas; no se nombraron clientes.
+
+## Logo horizontal con eslogan (entregado por el cliente, oct 2026)
+
+Dos versiones (WhatsApp Image 2026-10-27 3:07 PM): texto negro para fondo claro y texto
+blanco para fondo oscuro, con el eslogan "Agencia creativa audiovisual". Procesadas a WebP
+con fondo transparente (1200 px de ancho, ≈42 KB):
+
+| Archivo | Uso |
+|---|---|
+| `public/brand/logo-horizontal-sobre-oscuro.webp` | Fondos negro/morado/rojo. En uso: Hero de Inicio |
+| `public/brand/logo-horizontal-sobre-claro.webp` | Fondo blanco. Disponible, sin uso aún (el sitio es oscuro) |
+
+Se usa con `<BrandLogo on="dark" | "light" />`. **A confirmar con el cliente:** el logotipo de
+estas versiones (tipografía recta) es distinto al del brandboard (ancho e inclinado, ver
+`skills/nitido-web-platform`). Hay que definir cuál es el vigente y, si es este, actualizar
+brandboard y skill. Además llegaron como JPEG de WhatsApp: pedir SVG o PNG originales.

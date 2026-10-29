@@ -2,6 +2,7 @@ import { useState } from "react";
 import { NavLink, Link } from "react-router-dom";
 import { brand, nav, routes } from "../../data/content";
 import Button from "../ui/Button";
+import BrandLogo from "../ui/BrandLogo";
 
 const linkClass = ({ isActive }) =>
   `font-body text-sm transition-colors ${isActive ? "text-white" : "text-white/75 hover:text-white"}`;
@@ -15,8 +16,7 @@ export default function Navbar() {
     <header className="fixed top-0 inset-x-0 z-50 border-b border-white/10 bg-black/80 backdrop-blur-md">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-3 sm:px-8">
         <Link to={routes.home} className="flex items-center gap-2.5" aria-label={`${brand.name} — inicio`}>
-          <img src="/brand/isotipo-white.png" alt="" className="h-8 w-auto" width="32" height="24" />
-          <span className="font-display text-xl tracking-wide">{brand.name.toUpperCase()}</span>
+          <BrandLogo variant="compact" alt="" className="h-9 w-auto sm:h-10" />
         </Link>
 
         <nav className="hidden md:flex items-center gap-8" aria-label="Navegación principal">

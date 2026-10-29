@@ -92,3 +92,15 @@ Se usa con `<BrandLogo on="dark" | "light" />`. **A confirmar con el cliente:** 
 estas versiones (tipografía recta) es distinto al del brandboard (ancho e inclinado, ver
 `skills/nitido-web-platform`). Hay que definir cuál es el vigente y, si es este, actualizar
 brandboard y skill. Además llegaron como JPEG de WhatsApp: pedir SVG o PNG originales.
+
+## Logo compacto (isotipo + NÍTIDO, sin eslogan)
+
+| Archivo | Uso |
+|---|---|
+| `public/brand/logo-nav-sobre-oscuro.webp` (737×160, ≈16 KB) | Barra de navegación y pie de página, vía `<BrandLogo variant="compact" />` |
+
+Se armó a partir del logo oscuro entregado por el cliente: se recortó el isotipo y la palabra NÍTIDO (con su tilde morada) y se
+quitó la línea del eslogan; la palabra se centró verticalmente con el isotipo, con la misma separación del original. No se
+reescribió con ninguna fuente. **Tipografía:** el logotipo nuevo parece una sans geométrica ancha tipo Montserrat, pero desde una
+imagen no se puede confirmar la fuente exacta. Para tenerla exacta hay que pedirle al cliente el SVG (letras en curvas) o el
+nombre de la fuente del diseñador.

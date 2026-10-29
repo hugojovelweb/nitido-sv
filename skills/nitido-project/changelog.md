@@ -85,3 +85,10 @@ Formato: `AAAA-MM-DD — Descripción`. Agregar una entrada por cada cambio que 
 - Ancho del logo: hasta 960 px en escritorio y 94 % de la pantalla en móvil. Logos re-exportados a resolución nativa (≈1290 px de ancho, ≈30 KB).
 - "Hagamos que se vea Nítido." sigue definido en `content.js` (`brand.tagline`) pero hoy NO se muestra en ninguna pantalla. Pendiente: decidir con el cliente si va en el pie de página u otra sección.
 - Verificador de marca 0/0, build y lint limpios, sin errores de JS.
+
+## 2026-10-28 — Barra y pie con el logo nuevo
+- El cliente indicó que el nombre "NÍTIDO" de la barra (texto en Anton) debe tener la tipografía del logo nuevo, junto al isotipo.
+- Se reemplazó el texto por el archivo del logo (`BrandLogo variant="compact"`) en Navbar y Footer; la skill de marca pide usar el archivo oficial y no reescribir el logotipo con fuentes.
+- Corrección en `BrandLogo`: se quitó `h-auto` (anulaba las alturas `h-8`/`h-10`).
+- Alturas: barra 36–40 px, pie 32 px. Verificador de marca 0/0, build y lint limpios, sin errores de JS.
+- Pendiente: SVG/fuente original para confirmar la tipografía exacta; definir si este logotipo reemplaza al del brandboard.

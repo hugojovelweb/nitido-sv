@@ -92,3 +92,10 @@ Formato: `AAAA-MM-DD — Descripción`. Agregar una entrada por cada cambio que 
 - Corrección en `BrandLogo`: se quitó `h-auto` (anulaba las alturas `h-8`/`h-10`).
 - Alturas: barra 36–40 px, pie 32 px. Verificador de marca 0/0, build y lint limpios, sin errores de JS.
 - Pendiente: SVG/fuente original para confirmar la tipografía exacta; definir si este logotipo reemplaza al del brandboard.
+
+## 2026-11-05 — Intro con video de Design y footer oficial
+- Video de Design (2,1 s) integrado como intro de entrada (`Splash`), con iris de salida, una vez por sesión, saltable (botón/Esc), omitido con movimiento reducido/ahorro de datos y con tope de tiempo. Las animaciones del hero esperan a que termine.
+- Footer oficial fijado: copyright de Nítido + firma "Hugo Jovel Web." enlazada a su portfolio (faltaba en el proyecto restaurado; la copia local del cliente ya la tenía). No cambiar sin pedido expreso.
+- `html { scrollbar-gutter: stable }` para evitar saltos de layout cuando la intro bloquea el scroll.
+- El entorno de desarrollo se reinició otra vez; proyecto restaurado desde el último zip. La corrección del degradado `#5504eb` en la skill compartida se reaplicó solo en la sandbox (no persiste).
+- Verificador de marca 0/0, build y lint limpios, sin errores de JS; probado: reproducción, iris, salto, memoria por sesión, movimiento reducido, móvil.

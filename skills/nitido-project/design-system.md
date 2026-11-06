@@ -27,3 +27,9 @@ Ver el documento completo en `/docs/design-system.md`. Este archivo es un resume
 GSAP + ScrollTrigger, solo transform/opacity/clip-path. Se activa con atributos `data-*` (ver `src/lib/motion.js`); los componentes no importan GSAP. Con `prefers-reduced-motion` no se anima nada. Nuevos: `AnimatedWords`, `Marquee`, `MediaSlot`, `PortfolioReel`, `PageWipe`.
 
 Logo con eslogan: `BrandLogo` (`on="dark"` o `"light"`) usa `public/brand/logo-horizontal-sobre-*.webp`. Sin efectos sobre el logo.
+
+## Footer oficial (NO cambiar sin pedido expreso del cliente)
+Línea 1: `© {año} Nítido. Todos los derechos reservados.` · Línea 2: `Hugo Jovel Web.` (enlace a https://hugojovelweb.tech/, nueva pestaña, `rel="noopener noreferrer"`). Firma de autoría del desarrollador. Un solo componente: `Footer.jsx`. Ver ADR-008.
+
+## Intro de entrada
+Video de Design (`public/intro/`), una vez por sesión, iris de salida, saltable, omitida con movimiento reducido. `Splash.jsx` + `lib/splash.js`. Ver ADR-008.

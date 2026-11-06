@@ -14,3 +14,4 @@ Registro resumido. El detalle completo de cada decisión (contexto, opciones con
 - No cambiar el stack sin nuevo ADR + autorización del cliente.
 - No agregar fotografía de stock — solo assets reales del Brand Board o entregados por el cliente.
 - No hardcodear API keys del proveedor de formulario — siempre vía variable de entorno.
+| [ADR-008](/docs/adr/ADR-008-intro-video-y-footer-oficial.md) | Intro de entrada con el video de Design (iris de salida, una vez por sesión) y footer oficial fijo con firma de Hugo Jovel Web | Pedido del cliente; la cortina entre páginas se mantiene corta |

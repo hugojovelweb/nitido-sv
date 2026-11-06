@@ -15,28 +15,36 @@
  *   data-reel            Portfolio: scroll horizontal fijado (solo escritorio)
  * Solo se anima transform, opacity y clip-path (ver docs/adr/ADR-007).
  */
+import { isSplashActive, onSplashEnd } from "./splash";
+
 export function initPage({ gsap, ScrollTrigger, root, conditions }) {
   const q = (selector) => gsap.utils.toArray(selector, root);
   const cleanups = [];
   const trigger = (el, start = "top 88%") => ({ trigger: el, start, once: true });
 
   // --- Entrada de página (above the fold) ---
+  // Si la intro de video está activa, la línea de tiempo espera a que termine.
+  const waiting = isSplashActive();
+  const intro = gsap.timeline({ paused: waiting });
+  if (waiting) cleanups.push(onSplashEnd(() => intro.play()));
+
   const words = q("[data-word]");
   if (words.length) {
-    gsap.from(words, { yPercent: 120, rotate: 5, duration: 1.1, ease: "expo.out", stagger: 0.08, delay: 0.1 });
+    intro.from(words, { yPercent: 120, rotate: 5, duration: 1.1, ease: "expo.out", stagger: 0.08 }, 0.1);
   }
   q("[data-iso]").forEach((el) =>
-    gsap.from(el, { scale: 0.3, rotate: -28, opacity: 0, duration: 1.2, ease: "elastic.out(1, 0.6)" })
+    intro.from(el, { scale: 0.3, rotate: -28, opacity: 0, duration: 1.2, ease: "elastic.out(1, 0.6)" }, 0)
   );
   q("[data-logo]").forEach((el) =>
-    gsap.fromTo(
+    intro.fromTo(
       el,
       { clipPath: "inset(0 100% 0 0)", scale: 0.94, opacity: 0.4 },
-      { clipPath: "inset(0 0% 0 0)", scale: 1, opacity: 1, duration: 1.4, ease: "expo.out" }
+      { clipPath: "inset(0 0% 0 0)", scale: 1, opacity: 1, duration: 1.4, ease: "expo.out" },
+      0
     )
   );
   q("[data-intro]").forEach((el, i) =>
-    gsap.from(el, { y: 34, opacity: 0, duration: 0.9, ease: "power3.out", delay: 0.45 + i * 0.12 })
+    intro.from(el, { y: 34, opacity: 0, duration: 0.9, ease: "power3.out" }, 0.45 + i * 0.12)
   );
 
   // --- Revelados al hacer scroll ---

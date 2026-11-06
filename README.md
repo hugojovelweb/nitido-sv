@@ -1,5 +1,5 @@
 # Nítido — Sitio Web (Fase 1)
-### By Hugo Jovel Web
+### By (Hugo Jovel Web) 
 
 Sitio corporativo multi-página de **Nítido**, agencia creativa y de marketing digital en El Salvador.
 

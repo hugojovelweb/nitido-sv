@@ -39,10 +39,23 @@ export default function Footer() {
         </div>
       </div>
 
-      <p className="mt-8 text-center text-xs text-white/40">
-        © {year} {brand.name}. Todos los derechos reservados.
-        <br /> <a href="https://hugojovelweb.tech/" target="_blank" rel="noreferrer" className="text-white/60 hover:text-white">Hugo Jovel Web.</a>  
-      </p>
+      {/* FOOTER OFICIAL DE NÍTIDO — se mantiene tal cual hasta pedido expreso del
+          cliente (skill nitido-web-platform; ADR-008). La segunda línea es la firma
+          de autoría: Hugo Jovel Web, desarrollador del sitio, enlaza a su portfolio. */}
+      <div className="mt-8 text-center text-xs text-white/40">
+        <p>© {year} {brand.name}. Todos los derechos reservados.</p>
+        <p className="mt-1">
+          <a
+            href="https://hugojovelweb.tech/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white/70 transition-colors hover:text-white"
+          >
+            Hugo Jovel Web
+          </a>
+          .
+        </p>
+      </div>
     </footer>
   );
 }

@@ -104,3 +104,12 @@ quitó la línea del eslogan; la palabra se centró verticalmente con el isotipo
 reescribió con ninguna fuente. **Tipografía:** el logotipo nuevo parece una sans geométrica ancha tipo Montserrat, pero desde una
 imagen no se puede confirmar la fuente exacta. Para tenerla exacta hay que pedirle al cliente el SVG (letras en curvas) o el
 nombre de la fuente del diseñador.
+
+## Video de intro (Design, nov 2026)
+
+| Original | Archivos | Uso |
+|---|---|---|
+| `IMG_8481.MOV` (1920×1080, 2,1 s, 1,7 MB, con audio) | `public/intro/nitido-intro.mp4` (433 KB), `public/intro/nitido-intro.webm` (304 KB), sin audio | Intro de entrada (`Splash`), ver ADR-008 |
+
+Design habló de 3 s; el archivo recibido dura 2,1 s. Si hay una versión final más larga, reemplazar los dos archivos
+manteniendo el nombre.

@@ -3,6 +3,7 @@ import { Outlet, useLocation } from "react-router-dom";
 import Navbar from "../navigation/Navbar";
 import Footer from "./Footer";
 import PageWipe from "./PageWipe";
+import Splash from "./Splash";
 import useGsapScope from "../../hooks/useGsapScope";
 import { initPage } from "../../lib/motion";
 
@@ -33,6 +34,7 @@ export default function Layout() {
         Saltar al contenido principal
       </a>
       <Navbar />
+      <Splash />
       <PageWipe />
       <main id="main-content" ref={mainRef}>
         <Outlet />

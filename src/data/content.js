@@ -24,9 +24,9 @@ export const socials = [
   { name: "WhatsApp", href: brand.whatsappLink, confirmed: true },
   { name: "Facebook", href: "#", confirmed: false },
   { name: "TikTok", href: brand.tiktokLink, confirmed: true },
-  { name: "YouTube", href: "#", confirmed: false },
-  { name: "LinkedIn", href: "#", confirmed: false },
-  { name: "X", href: "#", confirmed: false },
+  // { name: "YouTube", href: "#", confirmed: false },
+  // { name: "LinkedIn", href: "#", confirmed: false },
+  // { name: "X", href: "#", confirmed: false },
 ];
 
 // Mapa del sitio multi-página (routing con react-router-dom).

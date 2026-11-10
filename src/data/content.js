@@ -10,6 +10,8 @@ export const brand = {
   whatsappLink: "https://wa.me/50360545650",
   instagram: "@nitido_sv",
   instagramLink: "https://instagram.com/nitido_sv",
+  tiktok: "@nitido_sv",
+  tiktokLink: "https://www.tiktok.com/@nitido_sv?_r=1&_t=ZS-9BAaulF0gQH",
   email: "somosos.nitido@gmail.com",
 };
 
@@ -21,7 +23,7 @@ export const socials = [
   { name: "Instagram", href: brand.instagramLink, confirmed: true },
   { name: "WhatsApp", href: brand.whatsappLink, confirmed: true },
   { name: "Facebook", href: "#", confirmed: false },
-  { name: "TikTok", href: "#", confirmed: false },
+  { name: "TikTok", href: brand.tiktokLink, confirmed: true },
   { name: "YouTube", href: "#", confirmed: false },
   { name: "LinkedIn", href: "#", confirmed: false },
   { name: "X", href: "#", confirmed: false },

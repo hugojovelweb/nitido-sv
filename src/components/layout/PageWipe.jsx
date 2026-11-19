@@ -39,7 +39,7 @@ export default function PageWipe() {
     <div
       ref={ref}
       aria-hidden="true"
-      className="pointer-events-none fixed inset-0 z-[60] hidden items-center justify-center bg-gradient-to-br from-nitido-purple-deep via-nitido-purple to-nitido-red"
+      className="pointer-events-none fixed inset-0 z-60 hidden items-center justify-center bg-linear-to-br from-nitido-purple-deep via-nitido-purple to-nitido-red"
     >
       <img src="/brand/isotipo-white.png" alt="" className="h-20 w-auto" />
     </div>

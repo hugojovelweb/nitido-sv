@@ -72,7 +72,7 @@ export default function Splash() {
       role="dialog"
       aria-modal="true"
       aria-label="Animación de bienvenida de Nítido"
-      className="fixed inset-0 z-[100] flex items-center justify-center bg-black"
+      className="fixed inset-0 z-100 flex items-center justify-center bg-black"
       style={{
         clipPath: closing ? "circle(0% at 50% 50%)" : "circle(150% at 50% 50%)",
         transition: closing ? `clip-path ${IRIS_MS}ms cubic-bezier(0.76, 0, 0.24, 1)` : "none",

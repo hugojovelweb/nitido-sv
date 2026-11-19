@@ -26,6 +26,31 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://nitido.netlify.app/portfolio/gastronomicas</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://nitido.netlify.app/portfolio/inmobiliarias</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://nitido.netlify.app/portfolio/marca-personal</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://nitido.netlify.app/portfolio/espacios</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://nitido.netlify.app/portfolio/diseno-grafico</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://nitido.netlify.app/contacto</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>

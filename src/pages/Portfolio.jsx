@@ -2,7 +2,7 @@ import usePageTitle from "../hooks/usePageTitle";
 import CornerShards from "../components/ui/CornerShards";
 import AnimatedWords from "../components/ui/AnimatedWords";
 import Marquee from "../components/ui/Marquee";
-import PortfolioReel from "../components/sections/PortfolioReel";
+import PortfolioGrid from "../components/sections/PortfolioGrid";
 import CTABand from "../components/sections/CTABand";
 
 export default function Portfolio() {
@@ -35,7 +35,7 @@ export default function Portfolio() {
 
       <Marquee className="border-y border-white/10 py-4 text-2xl text-white/80 sm:text-3xl" />
 
-      <PortfolioReel />
+      <PortfolioGrid />
 
       <CTABand title="¿Querés ver tu marca aquí?" subtitle="Hablemos de tu próximo proyecto." />
     </>

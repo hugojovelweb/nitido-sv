@@ -10,8 +10,6 @@ export const brand = {
   whatsappLink: "https://wa.me/50360545650",
   instagram: "@nitido_sv",
   instagramLink: "https://instagram.com/nitido_sv",
-  tiktok: "@nitido_sv",
-  tiktokLink: "https://www.tiktok.com/@nitido_sv?_r=1&_t=ZS-9BAaulF0gQH",
   email: "somosos.nitido@gmail.com",
 };
 
@@ -22,8 +20,8 @@ export const brand = {
 export const socials = [
   { name: "Instagram", href: brand.instagramLink, confirmed: true },
   { name: "WhatsApp", href: brand.whatsappLink, confirmed: true },
-  { name: "Facebook", href: "#", confirmed: false },
-  { name: "TikTok", href: brand.tiktokLink, confirmed: true },
+  { name: "Facebook", href: brand.facebookLink, confirmed: true },
+  { name: "TikTok", href: brand.tiktokLink, confirmed: true }
   // { name: "YouTube", href: "#", confirmed: false },
   // { name: "LinkedIn", href: "#", confirmed: false },
   // { name: "X", href: "#", confirmed: false },
@@ -193,21 +191,107 @@ export const nosotros = {
   valuesDefined: false,
 };
 
-// Portfolio: fotografía real entregada por el cliente (Drive "Fotos Profesionales",
-// oct 2026). Archivos optimizados en /public/portfolio (WebP 800×1000, ≤250 KB).
-// Trazabilidad original → archivo en docs/assets.md. Los títulos son categorías
-// genéricas: NO se inventan nombres de clientes ni proyectos. `alt` describe la foto.
-// Formato: { title, category, mediaUrl, mediaType: "image" | "video", alt, poster? }
-export const portfolioItems = [
-  { title: "Gastronomía", category: "Fotografía de producto", mediaUrl: "/portfolio/portfolio-01-gastronomia-bebida.webp", mediaType: "image", alt: "Bebida de naranja con hojas de menta sobre un posavasos, con tres salsas al fondo" },
-  { title: "Hospitalidad", category: "Fotografía de espacios", mediaUrl: "/portfolio/portfolio-02-hospitalidad-recepcion.webp", mediaType: "image", alt: "Recepción de hotel con letrero dorado, lámpara de brazos y dos sillones negros" },
-  { title: "Gastronomía", category: "Fotografía de producto", mediaUrl: "/portfolio/portfolio-03-gastronomia-carne.webp", mediaType: "image", alt: "Salsa cremosa vertida sobre un corte de carne a la parrilla con verduras asadas" },
-  { title: "Hospitalidad", category: "Fotografía de espacios", mediaUrl: "/portfolio/portfolio-04-hospitalidad-lobby.webp", mediaType: "image", alt: "Mostrador de recepción de mármol en un lobby con paneles de madera y luces cálidas" },
-  { title: "Gastronomía", category: "Fotografía de producto", mediaUrl: "/portfolio/portfolio-05-gastronomia-pupusas.webp", mediaType: "image", alt: "Pupusa con queso derretido levantada sobre un plato de pupusas" },
-  { title: "Hospitalidad", category: "Fotografía de espacios", mediaUrl: "/portfolio/portfolio-06-hospitalidad-habitacion.webp", mediaType: "image", alt: "Habitación de hotel con cama, escritorio y un cuadro de paisaje" },
-  { title: "Gastronomía", category: "Fotografía de producto", mediaUrl: "/portfolio/portfolio-07-gastronomia-mesa.webp", mediaType: "image", alt: "Mesa con platos de carne, camarones y papas fritas acompañados de salsas" },
-  { title: "Hospitalidad", category: "Fotografía de espacios", mediaUrl: "/portfolio/portfolio-08-hospitalidad-sala.webp", mediaType: "image", alt: "Lobby con sofá capitoné gris y piso de mármol" },
+// ---------------------------------------------------------------------------
+// PORTFOLIO POR CATEGORÍAS (estructura pedida por el cliente en Canva, nov 2026)
+// Cada categoría = una portada en /portfolio y una página en /portfolio/<slug>.
+// TODO ES EDITABLE AQUÍ:
+//   kicker / title   texto real de la portada (se muestra sobre la foto, no va dentro de la imagen)
+//   cover            ruta de la portada, o null para usar el marcador con degradado de marca
+//   textInCover      true si la imagen de portada YA trae el título dentro: entonces el texto
+//                    se oculta visualmente (queda para lectores de pantalla y buscadores)
+//   description      texto de introducción de la página (vacío = no se muestra)
+//   items            fotos/videos de la categoría: { src, alt } o { type: "video", src, poster, alt }
+// Fotos: entregadas por el cliente (Drive "Fotos Profesionales"), optimizadas a WebP 4:5 en
+// /public/portfolio. Trazabilidad en docs/assets.md. NO se inventan clientes ni proyectos.
+// Categorías sin fotos muestran "Próximamente".
+// ---------------------------------------------------------------------------
+export const portfolioCategories = [
+  {
+    slug: "gastronomicas",
+    kicker: "Producciones",
+    title: "Gastronómicas",
+    cover: "/portfolio/portfolio-03-gastronomia-carne.webp",
+    textInCover: false,
+    description: "",
+    items: [
+      { src: "/portfolio/portfolio-03-gastronomia-carne.webp", alt: "Salsa cremosa vertida sobre un corte de carne a la parrilla con verduras asadas" },
+      { src: "/portfolio/portfolio-01-gastronomia-bebida.webp", alt: "Bebida de naranja con hojas de menta sobre un posavasos, con tres salsas al fondo" },
+      { src: "/portfolio/portfolio-07-gastronomia-mesa.webp", alt: "Mesa con platos de carne, camarones y papas fritas acompañados de salsas" },
+      { src: "/portfolio/portfolio-05-gastronomia-pupusas.webp", alt: "Pupusa con queso derretido levantada sobre un plato de pupusas" },
+      { src: "/portfolio/servicios-postre.webp", alt: "Rebanada de pastel de queso con salsa de fresa y menta" },
+      { src: "/portfolio/gastronomia-sandwich.webp", alt: "Sándwich de ciabatta con carne y papas fritas con salsa de tomate" },
+      { src: "/portfolio/gastronomia-pupusa-mano.webp", alt: "Mano sosteniendo una pupusa sobre una bandeja de pupusas" },
+      { src: "/portfolio/servicios-pupusas.webp", alt: "Canasta con pupusas recién hechas" },
+      { src: "/portfolio/servicios-sliders.webp", alt: "Mini hamburguesas con ensalada de repollo sobre una bandeja" },
+      { src: "/portfolio/gastronomia-sopa.webp", alt: "Tazón de barro con sopa de verduras y papa junto a pupusas" },
+    ],
+  },
+  {
+    slug: "inmobiliarias",
+    kicker: "Producciones",
+    title: "Inmobiliarias",
+    cover: "/portfolio/inmobiliaria-fachada.webp",
+    textInCover: false,
+    description: "",
+    items: [
+      { src: "/portfolio/inmobiliaria-fachada.webp", alt: "Fachada blanca de un edificio moderno con palmeras y cielo azul" },
+      { src: "/portfolio/inmobiliaria-sala.webp", alt: "Sala con sofá seccional gris, alfombra y plantas" },
+      { src: "/portfolio/inmobiliaria-pasillo.webp", alt: "Pasillo de una casa con sala, sofá gris y la puerta de entrada al fondo" },
+      { src: "/portfolio/inmobiliaria-dormitorio.webp", alt: "Dormitorio con dos camas, cortinas verdes y aire acondicionado" },
+      { src: "/portfolio/inmobiliaria-repisa.webp", alt: "Repisa blanca con plantas y decoraciones sobre una pared color crema" },
+      { src: "/portfolio/inmobiliaria-patio.webp", alt: "Patio interior con tragaluz, ventana y piso de cerámica" },
+    ],
+  },
+  {
+    slug: "marca-personal",
+    kicker: "Marca",
+    title: "Personal",
+    cover: "/portfolio/marca-personal-01.webp",
+    textInCover: false,
+    description: "",
+    items: [
+      { src: "/portfolio/marca-personal-01.webp", alt: "Retrato de un hombre con traje negro y corbata, sentado en una silla de oficina sobre fondo claro" },
+      { src: "/portfolio/marca-personal-02.webp", alt: "Retrato de un hombre con traje negro y corbata, sentado con las piernas cruzadas" },
+      { src: "/portfolio/marca-personal-03.webp", alt: "Retrato de un hombre sonriendo mientras se abotona el saco del traje" },
+    ],
+  },
+  {
+    slug: "espacios",
+    kicker: "Fotografía de",
+    title: "Espacios",
+    cover: "/portfolio/portfolio-08-hospitalidad-sala.webp",
+    textInCover: false,
+    description: "",
+    items: [
+      { src: "/portfolio/portfolio-08-hospitalidad-sala.webp", alt: "Lobby con sofá capitoné gris y piso de mármol" },
+      { src: "/portfolio/portfolio-04-hospitalidad-lobby.webp", alt: "Mostrador de recepción de mármol en un lobby con paneles de madera y luces cálidas" },
+      { src: "/portfolio/portfolio-02-hospitalidad-recepcion.webp", alt: "Recepción de hotel con letrero dorado, lámpara de brazos y dos sillones negros" },
+      { src: "/portfolio/espacios-restaurante.webp", alt: "Restaurante de hotel con mesas blancas, sillas beige y margaritas en primer plano" },
+      { src: "/portfolio/espacios-desayunos.webp", alt: "Sala de desayunos de hotel con isla de mármol y madera y lámpara de araña" },
+      { src: "/portfolio/portfolio-06-hospitalidad-habitacion.webp", alt: "Habitación de hotel con cama, escritorio y un cuadro de paisaje" },
+      { src: "/portfolio/espacios-habitacion-a.webp", alt: "Habitación de hotel con cama doble, clóset y televisor bajo luces indirectas" },
+      { src: "/portfolio/espacios-habitacion-b.webp", alt: "Habitación de hotel con dos camas, cabeceras de madera y cuadros en la pared" },
+    ],
+  },
+  { slug: "dron", kicker: "Dron", title: "Services", cover: null, textInCover: false, description: "", items: [] },
+  { slug: "producto", kicker: "Fotografía", title: "de Producto", cover: null, textInCover: false, description: "", items: [] },
+  { slug: "publicitarias", kicker: "Producciones", title: "Publicitarias", cover: null, textInCover: false, description: "", items: [] },
+  { slug: "detras-de-camara", kicker: "Detrás", title: "de Cámara", cover: null, textInCover: false, description: "", items: [] },
+  {
+    slug: "diseno-grafico",
+    kicker: "Diseño",
+    title: "Gráfico",
+    cover: null,
+    textInCover: false,
+    description: "",
+    items: [
+      { src: "/portfolio/diseno-grafico-canoas.webp", alt: "Pieza gráfica \"Las mejores canoas\" con plátanos horneados con queso y pasas sobre papel estampado" },
+    ],
+  },
+  { slug: "desarrollo-web", kicker: "Desarrollo", title: "Web", cover: null, textInCover: false, description: "", items: [] },
 ];
+
+export const categoryPath = (slug) => `${routes.portfolio}/${slug}`;
 
 // Mosaico de Servicios Creativos (misma fuente: fotos entregadas por el cliente)
 export const serviciosCreativosMedia = [

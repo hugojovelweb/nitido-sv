@@ -5,6 +5,7 @@ import Nosotros from "./pages/Nosotros";
 import ServiciosCreativos from "./pages/ServiciosCreativos";
 import ServiciosDigitales from "./pages/ServiciosDigitales";
 import Portfolio from "./pages/Portfolio";
+import PortfolioCategory from "./pages/PortfolioCategory";
 import Contacto from "./pages/Contacto";
 import { routes } from "./data/content";
 
@@ -19,6 +20,7 @@ export default function App() {
           <Route path={routes.serviciosCreativos} element={<ServiciosCreativos />} />
           <Route path={routes.serviciosDigitales} element={<ServiciosDigitales />} />
           <Route path={routes.portfolio} element={<Portfolio />} />
+          <Route path={`${routes.portfolio}/:slug`} element={<PortfolioCategory />} />
           <Route path={routes.contacto} element={<Contacto />} />
           <Route path="*" element={<Navigate to={routes.home} replace />} />
         </Route>

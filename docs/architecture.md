@@ -26,6 +26,7 @@ qué página mostrar en el navegador.
 | `/servicios/creativos` | Servicios Creativos | `pages/ServiciosCreativos.jsx` |
 | `/servicios/digitales` | Servicios Digitales | `pages/ServiciosDigitales.jsx` |
 | `/portfolio` | Portfolio | `pages/Portfolio.jsx` |
+| `/portfolio/:slug` | Categoría del portfolio (10) | `pages/PortfolioCategory.jsx` |
 | `/contacto` | Contacto | `pages/Contacto.jsx` |
 | `*` | Redirect → `/` | — |
 

@@ -113,3 +113,20 @@ nombre de la fuente del diseñador.
 
 Design habló de 3 s; el archivo recibido dura 2,1 s. Si hay una versión final más larga, reemplazar los dos archivos
 manteniendo el nombre.
+
+## Portfolio por categorías (nov 2026) — fotos por categoría
+
+Fotos del Drive "Fotos Profesionales" (WebP 800×1000, ≤250 KB, en `public/portfolio/`). La asignación a categorías la hizo el desarrollo según el contenido de
+cada foto, tomando como guía las portadas de Canva (cuatro coinciden con fotos del Drive); **el cliente debe confirmarla** y se corrige en `content.js`.
+
+| Categoría | Fotos (archivos en `public/portfolio/`) |
+|---|---|
+| Producciones gastronómicas | `portfolio-03-gastronomia-carne`, `portfolio-01-gastronomia-bebida`, `portfolio-07-gastronomia-mesa`, `portfolio-05-gastronomia-pupusas`, `servicios-postre`, `gastronomia-sandwich`, `gastronomia-pupusa-mano`, `servicios-pupusas`, `servicios-sliders`, `gastronomia-sopa` |
+| Producciones inmobiliarias | `inmobiliaria-fachada`, `-sala`, `-pasillo`, `-dormitorio`, `-repisa`, `-patio` |
+| Marca personal | `marca-personal-01`, `-02`, `-03` (retratos; la persona figura en la portada de Canva de esta categoría) |
+| Fotografía de espacios | `portfolio-08-hospitalidad-sala`, `portfolio-04-hospitalidad-lobby`, `portfolio-02-hospitalidad-recepcion`, `espacios-restaurante`, `espacios-desayunos`, `portfolio-06-hospitalidad-habitacion`, `espacios-habitacion-a`, `espacios-habitacion-b` |
+| Diseño gráfico | `diseno-grafico-canoas` (pieza gráfica con texto dentro de la imagen; asignada aquí por suposición) |
+| Dron, Fotografía de producto, Producciones publicitarias, Detrás de cámara, Desarrollo web | **Sin material todavía** (IMAGE_REQUIRED): marcador "Próximamente" |
+
+Pendiente del cliente: exportación del Canva (PDF + fotos sin texto encima) para portadas finales, textos internos y proyectos por categoría; imagen para "Desarrollo web";
+confirmar si "Dron Services" se escribe así o "Servicios de dron" (se dejó el texto exacto de Canva).

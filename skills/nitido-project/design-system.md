@@ -33,3 +33,6 @@ Línea 1: `© {año} Nítido. Todos los derechos reservados.` · Línea 2: `Hugo
 
 ## Intro de entrada
 Video de Design (`public/intro/`), una vez por sesión, iris de salida, saltable, omitida con movimiento reducido. `Splash.jsx` + `lib/splash.js`. Ver ADR-008.
+
+## Portfolio por categorías
+Cuadrícula de 10 portadas (`PortfolioGrid`) + página por categoría (`PortfolioCategory`, `/portfolio/<slug>`). Todo editable en `content.js` → `portfolioCategories` (texto real sobre foto limpia; `textInCover` para portadas con texto en la imagen). Ver ADR-009.

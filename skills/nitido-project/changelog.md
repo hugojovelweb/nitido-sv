@@ -99,3 +99,17 @@ Formato: `AAAA-MM-DD — Descripción`. Agregar una entrada por cada cambio que 
 - `html { scrollbar-gutter: stable }` para evitar saltos de layout cuando la intro bloquea el scroll.
 - El entorno de desarrollo se reinició otra vez; proyecto restaurado desde el último zip. La corrección del degradado `#5504eb` en la skill compartida se reaplicó solo en la sandbox (no persiste).
 - Verificador de marca 0/0, build y lint limpios, sin errores de JS; probado: reproducción, iris, salto, memoria por sesión, movimiento reducido, móvil.
+
+## 2026-11-06 — Actualización de seguridad de dependencias
+- Hostinger (escáner de seguridad) reportó 6 vulnerabilidades en `vite 8.3.0` (1 alta, 4 moderadas, 1 baja). `npm audit` confirmó las 6 y una más en `source-map-js` (transitiva, vía postcss).
+- Causa: el `package-lock.json` fijaba `vite 8.3.0`; los avisos se publicaron después de instalarlo. No las causó ningún cambio de código.
+- Alcance real: todas afectan al servidor de desarrollo de Vite (`npm run dev`) y a sus herramientas; el sitio publicado es solo archivos estáticos (`dist/`) y no incluye Vite.
+- Corregido con `npm audit fix`: `vite 8.3.0 → 8.3.6`, `source-map-js 1.2.1 → 1.2.2`. `package.json` no cambió (el rango `^8.3.0` ya lo permitía); solo cambió `package-lock.json`. `npm audit`: 0 vulnerabilidades. Build, lint, verificador de marca y prueba de las 6 páginas sin errores.
+- Pendiente (hallazgo aparte): `/nosotros` y `/contacto` no tienen `<h1>` (su título es `h2`); conviene corregirlo por accesibilidad.
+
+## 2026-11-18 — Portfolio por categorías (estructura de Canva)
+- Canva de los clientes: 10 categorías. El enlace no es legible por robots; se usó la captura. Decisiones del cliente: página propia por categoría, reemplazar el reel, títulos de texto real y editable (con opción `textInCover`).
+- Nuevos: `portfolioCategories` (content.js), `PortfolioGrid`, `PortfolioCategory`, `GalleryMedia`, ruta `/portfolio/:slug`, 17 fotos nuevas optimizadas, URLs en sitemap (las 5 categorías con contenido). Eliminados: `PortfolioReel`, `MediaSlot`.
+- 5 categorías con fotos (gastronómicas, inmobiliarias, marca personal, espacios, diseño gráfico) y 5 con marcador "Próximamente" (dron, producto, publicitarias, detrás de cámara, desarrollo web).
+- Verificador de marca 0/0, build y lint limpios, sin errores de JS ni imágenes rotas; probado clic, anterior/siguiente, slug inválido y móvil.
+- Pendiente: exportación de Canva (PDF + fotos limpias), proyectos por categoría, confirmar asignación de fotos y el texto "Dron Services".
